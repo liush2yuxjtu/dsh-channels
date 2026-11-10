@@ -1,0 +1,10 @@
+ts	phase	decision	why	evidence	result
+2026-11-10T11:55:15.167640Z	design	Use the official Host admission check for a dedicated route	The generic dedicated RPC getter loses its dependency context in the target DSH build	index.mjs	real CLI and browser PASS
+2026-11-10T11:55:15.167640Z	design	Keep membership in the plugin and use a trusted Host	A DSH owner login still controls the wider Host	README.md	scope documented
+2026-11-10T11:55:15.167640Z	context	Contribute channel memory through scoped native model context	Internal context must not clutter the visible user message	docs/media/03-real-mission-todo.png	real browser PASS
+2026-11-10T11:55:15.167640Z	review	Persist pending browser requests and bootstrap secrets	A lost acknowledgement must not duplicate work or lose the owner identity	tests/live.test.mjs	lost acknowledgement and reload PASS
+2026-11-10T11:55:15.167640Z	review	Keep failed deliveries at the head of each mission queue	Later messages must not hide or bypass an earlier failure	tests/channels.test.mjs	16 tests PASS
+2026-11-10T11:55:15.167640Z	review	Fix code span fence URL and escape handling	Quoted examples must not start an Agent	tests/channels.test.mjs	16 tests PASS
+2026-11-10T11:55:15.167640Z	verification	Use actual official API replies and native tool events	A build or a seeded reply does not prove the feature	docs/evidence/live.json	19 browser checks PASS
+2026-11-10T11:55:15.167640Z	verification	Restart two actual official CLI processes with nonempty TODOs	Persisted bindings must survive a normal Host restart	docs/evidence/cold-restart.json	13 cold restart checks PASS
+2026-11-10T11:55:15.167640Z	review	Recheck all four release blockers with independent review	A fresh review found failure paths missed by happy path tests	src/channels.mjs	no remaining release blockers

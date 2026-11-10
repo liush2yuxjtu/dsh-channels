@@ -1,0 +1,31 @@
+{
+  "name": "dsh-channels",
+  "version": "0.1.0",
+  "description": "Shared channels for DeepSeek Harness. Mention @deepseek to start a durable mission thread.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./index.mjs",
+  "exports": {".": "./index.mjs", "./client": "./client.js", "./package.json": "./package.json"},
+  "files": ["index.mjs", "client.js", "src", "cordis.patch.yml", "README.md", "README.zh-CN.md", "LICENSE"],
+  "engines": {"node": ">=24.9.0", "dsh": ">=0.2.2-rc.1 <0.3.0"},
+  "dsh": {
+    "bundle": {"patch": "./cordis.patch.yml"},
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-connection", "@deepseek-ai/dsh-client-ui-layout", "@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-client-ui-renderer", "@deepseek-ai/dsh-api-session-controller", "@deepseek-ai/dsh-client-locale"]
+    }
+  },
+  "scripts": {
+    "test": "node --test tests/channels.test.mjs",
+    "build": "node scripts/check.mjs",
+    "verify": "npm test && npm run build",
+    "verify:live": "node scripts/live-browser.mjs",
+    "verify:commit": "node scripts/pre-commit.mjs",
+    "install:hooks": "node scripts/install-hooks.mjs"
+  },
+  "dependencies": {"zod": "4.4.3"},
+  "peerDependencies": {"@deepseek-ai/cordis": "^4.1.0", "@deepseek-ai/dsh-storage-domain": "0.2.2-rc.1"},
+  "repository": {"type": "git", "url": "git+https://github.com/liush2yuxjtu/dsh-channels.git"},
+  "keywords": ["dsh", "dsh-plugin", "deepseek", "deepseek-harness", "channels", "threads", "collaboration", "agent", "mention-to-mission"]
+}

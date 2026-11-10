@@ -1,0 +1,288 @@
+{
+  "status": "PASS",
+  "runId": "6f1dcff7-203f-433a-8601-2b10af2798e5",
+  "at": "2026-11-10T11:53:41.201Z",
+  "candidateTree": null,
+  "sourceRevision": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "liveModel": true,
+  "mockedService": false,
+  "scriptedModel": false,
+  "seededAssistantMessages": false,
+  "seededTodoEvents": false,
+  "checks": [
+    "two-browser-identities-share-real-durable-human-messages",
+    "ordinary-and-inline-code-mentions-make-zero-api-calls",
+    "mention-creates-one-native-session",
+    "real-model-reads-fresh-file-and-writes-native-todos",
+    "native-composer-replaced-through-official-slot",
+    "ordinary-thread-reply-makes-zero-api-calls",
+    "mention-followup-reuses-exact-session-and-context",
+    "lost-acknowledgement-then-browser-reload-and-retry-reuses-the-persisted-request-id",
+    "duplicate-request-does-not-create-another-mission",
+    "new-independent-session-recalls-only-same-channel-mission-memory",
+    "actual-official-api-requests-exclude-the-other-channel-fact",
+    "server-channel-acl-blocks-guessed-private-channel",
+    "server-rejects-session-id-and-owner-role-spoofing",
+    "official-host-cookie-and-origin-fences-reject-unauthenticated-and-cross-origin-requests",
+    "browser-reload-restores-identity-mission-and-human-notes",
+    "durable-native-session-contains-real-assistant-and-todo-events",
+    "mobile-thread-and-channel-navigation-without-horizontal-overflow",
+    "dark-mode-token-inheritance",
+    "native-mode-disposes-overrides-and-restores-native-composer"
+  ],
+  "sources": {
+    "client.js": "21e7e9c75c17d5f3225ecf371a4acd579caf2903770dd35d2fd0587b6907203d",
+    "cordis.patch.yml": "c26071cdf9a753c56d22da37a567cd8c831b3e5d8e7bc406da6a5f853d92d2a4",
+    "index.mjs": "3a87739e12515f306b013d760490a80f06c9c0618839900be73a222668264963",
+    "package.json": "83e42e052c37004b4c4d48e0a6cc4009b65fc61f87a086f94539a362bdc53161",
+    "scripts/check.mjs": "99456856485e99152578cf2d36aff1d862e66dbb3d45debf7323437e63af55b0",
+    "scripts/cold-restart.mjs": "d84079e2323d7f326d94f28038085ba1208daaefa230fe7e16760ca3e8d78f94",
+    "scripts/install-hooks.mjs": "a3d8a0751e9c77411d3ebcb15ab589c52deaf64ec79e036982896eb458c3f5ac",
+    "scripts/live-browser.mjs": "6a73fa93d1d1605aef7f4794f5e1692855d36ef7a91d0623499abfd65005bd22",
+    "scripts/pre-commit.mjs": "2a803ec54dff259ab919c18b57269ec222b64a3d503a41fec2311516dc0a3025",
+    "src/channels.mjs": "fa72bd470920158f65bb5a5655be2fec7ea8992bb743f6d8fefdc09db37ef80c",
+    "src/projection.mjs": "ef9ee197955e395cfa84bc96019bf766fcac6d9af9510c3e0fc71cf52d40861c",
+    "tests/channels.test.mjs": "44e3b9ff03cf40e096341563f9453556118d1a01f3845afeedeb8cf477923022",
+    "tests/live-proof.mjs": "cfced628ebbccb9a48eb2abe7e44ede8ef64b142f811d5cef0ebe9443f51ebbe",
+    "tests/live.config.mjs": "2f8843f2361a21715cc27f739ad061ae6fe589d2750d8de75879f1cbe5aea843",
+    "tests/live.test.mjs": "b8963c2190aa7a9e2cd6ff4972b3f6738754472166e9afde69de8c81137edb27"
+  },
+  "calls": [
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "b388b141-eca6-4338-960d-a1e0255cd5ac",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:07.158Z",
+      "responseId": "beae9d34-cf0f-406a-828f-dcd175de920b",
+      "usage": {
+        "input_tokens": 750,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 1408,
+        "output_tokens": 54,
+        "service_tier": "standard"
+      },
+      "text": "",
+      "toolCalls": [
+        {
+          "id": "call_00_Giql51UpmRQWIXMF63kY3049",
+          "name": "read",
+          "arguments": {
+            "file_path": "/tmp/dsh-web-e2e-ws-MAKJgu/dimensions.json"
+          }
+        }
+      ],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "tool_use",
+      "complete": true,
+      "responseSha256": "a5b71e905f98153655897c4e4ec576f3054d9a22b1ba9805e748d1034faf7706",
+      "finishedAt": "2026-11-10T11:53:14.965Z"
+    },
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "b388b141-eca6-4338-960d-a1e0255cd5ac",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:15.070Z",
+      "responseId": "684a42be-2986-4ba4-9b39-1345907210f2",
+      "usage": {
+        "input_tokens": 169,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 2176,
+        "output_tokens": 81,
+        "service_tier": "standard"
+      },
+      "text": "",
+      "toolCalls": [
+        {
+          "id": "call_00_wZkQxkGm5yrQl0reQFmt1031",
+          "name": "todo_write",
+          "arguments": {
+            "todos": [
+              {
+                "content": "Review layout",
+                "status": "in_progress"
+              },
+              {
+                "content": "Check channel trigger",
+                "status": "pending"
+              },
+              {
+                "content": "Verify persistence",
+                "status": "pending"
+              }
+            ]
+          }
+        }
+      ],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "tool_use",
+      "complete": true,
+      "responseSha256": "e4a1cd47f93bcc7d7e20ba0d49d216d7d78e7d90624a04535ea4d383e8706a8c",
+      "finishedAt": "2026-11-10T11:53:16.376Z"
+    },
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "b388b141-eca6-4338-960d-a1e0255cd5ac",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:16.417Z",
+      "responseId": "5b233c68-0371-4529-ba5f-c3ff2158b92f",
+      "usage": {
+        "input_tokens": 150,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 2304,
+        "output_tokens": 79,
+        "service_tier": "standard"
+      },
+      "text": "",
+      "toolCalls": [
+        {
+          "id": "call_00_EoxD02LsFpxVWAI7JrqA6816",
+          "name": "todo_write",
+          "arguments": {
+            "todos": [
+              {
+                "content": "Review layout",
+                "status": "completed"
+              },
+              {
+                "content": "Check channel trigger",
+                "status": "pending"
+              },
+              {
+                "content": "Verify persistence",
+                "status": "pending"
+              }
+            ]
+          }
+        }
+      ],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "tool_use",
+      "complete": true,
+      "responseSha256": "8e9ffd67f44eb139ba65b4e19865903aaf0afa34c9fe834f1f791f14158cf834",
+      "finishedAt": "2026-11-10T11:53:17.700Z"
+    },
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "b388b141-eca6-4338-960d-a1e0255cd5ac",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:17.736Z",
+      "responseId": "51a24a66-6761-4d86-821b-64e0c4d5beea",
+      "usage": {
+        "input_tokens": 257,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 2304,
+        "output_tokens": 87,
+        "service_tier": "standard"
+      },
+      "text": "Layout reviewed; remaining width = 1440 − 240 − 420 = **780px**.\n\n- Codename: **orbit-af2798e5** (from [message:da7aa088])\n- Nonce: `tide-6f1dcff7`\n\nTodo list: \"Review layout\" completed; \"Check channel trigger\" and \"Verify persistence\" still pending, as the file's checklist instructed.",
+      "toolCalls": [],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "end_turn",
+      "complete": true,
+      "responseSha256": "5e01af58411b9c44823a4829450c8deb1771257f34ed27e5cd5f3f31c04a1cbf",
+      "finishedAt": "2026-11-10T11:53:19.127Z"
+    },
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "b388b141-eca6-4338-960d-a1e0255cd5ac",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:20.481Z",
+      "responseId": "58d9ebae-5b3c-4d5c-8c50-eb08a7a4b555",
+      "usage": {
+        "input_tokens": 861,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 2560,
+        "output_tokens": 79,
+        "service_tier": "standard"
+      },
+      "text": "",
+      "toolCalls": [
+        {
+          "id": "call_00_QRJbdr1y6qhbjRK10vRh2523",
+          "name": "todo_write",
+          "arguments": {
+            "todos": [
+              {
+                "content": "Review layout",
+                "status": "completed"
+              },
+              {
+                "content": "Check channel trigger",
+                "status": "completed"
+              },
+              {
+                "content": "Verify persistence",
+                "status": "pending"
+              }
+            ]
+          }
+        }
+      ],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "tool_use",
+      "complete": true,
+      "responseSha256": "a34231555aab5fa63d22728fb5da2e2aa31dc2ea914e2b0eeb480c423e486a51",
+      "finishedAt": "2026-11-10T11:53:21.698Z"
+    },
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "b388b141-eca6-4338-960d-a1e0255cd5ac",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:21.740Z",
+      "responseId": "4cef3a95-3398-45f9-8559-a4b5db932919",
+      "usage": {
+        "input_tokens": 200,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 3328,
+        "output_tokens": 89,
+        "service_tier": "standard"
+      },
+      "text": "**Nonce:** `tide-6f1dcff7` — recalled from the earlier read; file not reopened.\n\n**Width:** 780px (1440 − 240 − 420).\n\n- **Channel trigger:** checked; codename orbit-af2798e5 from [message:da7aa088].\n- **Remaining:** Verify persistence stays pending; Mina owns persistence per [message:9304f156].",
+      "toolCalls": [],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "end_turn",
+      "complete": true,
+      "responseSha256": "9591240963e231de4530542aedc802267da73848119e2af0bc3ab6db79a6beed",
+      "finishedAt": "2026-11-10T11:53:29.193Z"
+    },
+    {
+      "endpoint": "https://api.deepseek.com/anthropic/v1/messages",
+      "sessionId": "4c248cf8-85a1-4dfc-a5d5-c0cb27627450",
+      "model": "deepseek-flash",
+      "at": "2026-11-10T11:53:29.857Z",
+      "responseId": "69280de2-89d5-4a7d-beba-86a40ed4c7d7",
+      "usage": {
+        "input_tokens": 1114,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 1408,
+        "output_tokens": 71,
+        "service_tier": "standard"
+      },
+      "text": "The previous mission [mission:512cab7f-5b2c-449b-9846-a45d388e5308] confirmed the release codename orbit-af2798e5 (sourced from [message:da7aa088]) and a layout width of 780px (1440 − 240 − 420).",
+      "toolCalls": [],
+      "httpStatus": 200,
+      "requestId": null,
+      "stopReason": "end_turn",
+      "complete": true,
+      "responseSha256": "0f123e526f9c2ef557a315de87e37c03f8bd72ae37d11dba33b6707da8ef1e23",
+      "finishedAt": "2026-11-10T11:53:36.020Z"
+    }
+  ],
+  "sessions": [
+    "b388b141-eca6-4338-960d-a1e0255cd5ac",
+    "4c248cf8-85a1-4dfc-a5d5-c0cb27627450"
+  ],
+  "provenance": {
+    "apiResponses": 6,
+    "nativeToolCalls": 4,
+    "todoWrites": 3
+  },
+  "browserErrors": [],
+  "networkFaultInjection": "One response is dropped after the real server accepts the second mission; retry must reuse its durable request ID."
+}

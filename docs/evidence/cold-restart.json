@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-11-10T11:48:38.262Z",
+  "method": "two actual official DSH CLI Host processes",
+  "sourceRevision": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "pluginSourceHash": "775ad045ec11d59f6e3d7dcf45f19eea3398c2a08a9afdaa38340bf29f286c79",
+  "sourceHashes": {
+    "client.js": "21e7e9c75c17d5f3225ecf371a4acd579caf2903770dd35d2fd0587b6907203d",
+    "cordis.patch.yml": "c26071cdf9a753c56d22da37a567cd8c831b3e5d8e7bc406da6a5f853d92d2a4",
+    "index.mjs": "3a87739e12515f306b013d760490a80f06c9c0618839900be73a222668264963",
+    "package.json": "83e42e052c37004b4c4d48e0a6cc4009b65fc61f87a086f94539a362bdc53161",
+    "src/channels.mjs": "fa72bd470920158f65bb5a5655be2fec7ea8992bb743f6d8fefdc09db37ef80c",
+    "src/projection.mjs": "ef9ee197955e395cfa84bc96019bf766fcac6d9af9510c3e0fc71cf52d40861c"
+  },
+  "messageHash": "88af63fd7017715d09de9f390d076034def61baca429d60810b4d6faf0125805",
+  "processCount": 2,
+  "processes": [
+    {
+      "pid": 18,
+      "exitCode": 0,
+      "signal": null,
+      "stoppedBy": "SIGTERM"
+    },
+    {
+      "pid": 32,
+      "exitCode": 0,
+      "signal": null,
+      "stoppedBy": "SIGTERM"
+    }
+  ],
+  "checks": [
+    "first-real-official-dsh-cli-host-ready",
+    "real-plugin-rpc-ordinary-message-durable-without-agent",
+    "actual-dsh-storage-file-contains-message",
+    "real-official-model-mention-creates-completed-native-session",
+    "first-host-drained-via-sigterm",
+    "native-session-file-records-real-official-response",
+    "same-native-session-summary-and-todos-restored-after-real-host-cold-restart",
+    "second-real-official-dsh-cli-process-restores-same-member-channel-message",
+    "durable-idempotency-after-cold-restart",
+    "real-official-followup-resumes-same-session-and-recalls-unrepeated-word",
+    "second-host-drained-via-sigterm",
+    "two-real-official-turns-and-nonempty-todos-durable-in-original-native-session",
+    "same-plugin-sources-in-both-host-processes"
+  ],
+  "sessionId": "57d68181-ff30-4e3d-bc2b-31f2360ce33f",
+  "summaryHash": "ec33bad0ca0f84619e097a1bf42063446a7ed09727281c62214cfab0ef75211d",
+  "sessionEvidence": {
+    "fileCount": 1,
+    "assistantResponseCount": 2,
+    "turnCount": 2,
+    "todoCount": 2,
+    "completedTodoCount": 1,
+    "providers": [
+      "deepseek-official"
+    ],
+    "responseHashes": [
+      "373ac957ae2c70c2a83163ab420fa0d658f12db15e5a2a88c398f8d7544f1497",
+      "ba1da9c88e7fafd624b39b50b25f0629139783eeef9090b9da4aa3ae00522b88"
+    ]
+  },
+  "modelTurnCount": 2,
+  "realModelVerified": true,
+  "restartMode": "normal-sigterm",
+  "crashWindowVerified": false,
+  "scope": "Normal SIGTERM stop and official DSH CLI Host cold restart, member and channel persistence, no-mention gate, real official DeepSeek mission, native Session file, non-empty TODO and summary recovery, same-Session model recall after restart, durable request idempotency."
+}
