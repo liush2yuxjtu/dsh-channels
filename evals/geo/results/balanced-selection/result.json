@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T15:19:54.110Z",
+  "benchmarkSha256": "4459216038e3545d51040299fc55047f627624f50d2b446ef9af19a0a1b2ad17",
+  "sourceHashes": [
+    {
+      "id": "dsh-channels",
+      "url": "https://github.com/liush2yuxjtu/dsh-channels",
+      "checkedAt": "2026-11-10",
+      "provenance": "First-party README and package metadata; documented claims, not independent runtime verification",
+      "characters": 711,
+      "sha256": "15e2f150abddd63ee44d0c0ab2514577cfa555297fe01415bd478934510fd8ab"
+    },
+    {
+      "id": "dsh-chaos",
+      "url": "https://github.com/hanxuanliang/dsh-chaos",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 285,
+      "sha256": "86b3dac1384b307148f21b661b185b936cc454fed710f7cad2b6aedac71fa5d8"
+    },
+    {
+      "id": "dsh-agent-team",
+      "url": "https://github.com/Contexera/dsh-agent-team",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 289,
+      "sha256": "5d442eed49fefc557699a44eb4a7f80271b9247e9a38201db053ace653caf4cd"
+    },
+    {
+      "id": "dsh-chatroom",
+      "url": "https://github.com/invclaw/DeepSeek-harness-chatroom",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 350,
+      "sha256": "206714d801624bf863e791de4ab78d0b10ec1b7d39db4d71fab13a7cc7ba518f"
+    },
+    {
+      "id": "nanmicoder-agent-teams",
+      "url": "https://github.com/NanmiCoder/dsh-agent-teams",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 279,
+      "sha256": "7217af86e6fdabb8ee3490cd61f0b26d93c0b380811cda07ce2af77d775c2659"
+    },
+    {
+      "id": "threads-space",
+      "url": "https://www.threads.space/",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 302,
+      "sha256": "d1f128dcabb36debb7fa12c6396d95742838a9886e329a1e27014ae7afc08545"
+    },
+    {
+      "id": "agentchattr",
+      "url": "https://github.com/bcurts/agentchattr",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 312,
+      "sha256": "198770d35fbee4d850ee94de191de9d93c128b8fd18090d9d92cdabf1e0497bf"
+    },
+    {
+      "id": "devin-slack",
+      "url": "https://docs.devin.ai/integrations/slack",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 299,
+      "sha256": "fb0b9ecfaa6074510955355b632e365f44ebf0c3602f49f78b657476a4f268bd"
+    },
+    {
+      "id": "openhands-slack",
+      "url": "https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 315,
+      "sha256": "024fa06b5b5c8d45c1c4c91a7a98830fba0a5d1604a68b2134a20cb825b3f8bb"
+    },
+    {
+      "id": "claude-tag",
+      "url": "https://claude.com/product/tag",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "characters": 358,
+      "sha256": "cc8cc78fdc617216123c427e04e76f7ea9fbf208622f6449785c3611493429fc"
+    }
+  ],
+  "provider": "DeepSeek official Anthropic-compatible API",
+  "model": "deepseek-flash",
+  "sampleCount": 2,
+  "requestsAttempted": 2,
+  "thinking": "disabled",
+  "maxOutputTokensPerRequest": 6000,
+  "status": "MEASURED",
+  "medianSelectionPassRate": 1,
+  "samples": [
+    {
+      "sampleId": 1,
+      "startedAt": "2026-11-10T15:19:46.664Z",
+      "provider": "DeepSeek official Anthropic-compatible API",
+      "model": "deepseek-flash",
+      "sourceOrder": [
+        "openhands-slack",
+        "dsh-agent-team",
+        "nanmicoder-agent-teams",
+        "agentchattr",
+        "devin-slack",
+        "dsh-channels",
+        "dsh-chatroom",
+        "claude-tag",
+        "dsh-chaos",
+        "threads-space"
+      ],
+      "promptSha256": "469b1103af2a85608b71fcd444830ecf80e61b51ca29a995b3ac5c300beee3df",
+      "httpStatus": 200,
+      "rawBody": "{\"id\":\"809862b1-70f0-431e-88da-b3e7efa16e96\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"deepseek-flash\",\"content\":[{\"type\":\"text\",\"text\":\"{\\\"cases\\\":[{\\\"id\\\":\\\"c-mention-native\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"dsh-channels\\\",\\\"citation\\\":\\\"https://github.com/liush2yuxjtu/dsh-channels\\\",\\\"quote\\\":\\\"Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session.\\\",\\\"reason\\\":\\\"Explicit mention-only triggering, ordinary replies do not invoke the agent, and thread mentions continue the native DSH session.\\\"}],\\\"reason\\\":\\\"dsh-channels explicitly documents all three requirements.\\\"},{\\\"id\\\":\\\"c-standing-team\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"dsh-agent-team\\\",\\\"citation\\\":\\\"https://github.com/Contexera/dsh-agent-team\\\",\\\"quote\\\":\\\"Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger.\\\",\\\"reason\\\":\\\"Persistent named members with task ownership and inbox messaging between agents.\\\"},{\\\"productId\\\":\\\"nanmicoder-agent-teams\\\",\\\"citation\\\":\\\"https://github.com/NanmiCoder/dsh-agent-teams\\\",\\\"quote\\\":\\\"Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel.\\\",\\\"reason\\\":\\\"Durable sub-agents with dependency-aware tasks and direct mailbox handoff.\\\"}],\\\"reason\\\":\\\"Both documented DSH agent-team products provide persistent identities, assigned work, and inter-agent handoff.\\\"},{\\\"id\\\":\\\"c-existing-slack\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"openhands-slack\\\",\\\"citation\\\":\\\"https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace\\\",\\\"quote\\\":\\\"Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation.\\\",\\\"reason\\\":\\\"Slack development requests with threaded follow-up; beta announcement, current availability unknown.\\\"},{\\\"productId\\\":\\\"devin-slack\\\",\\\"citation\\\":\\\"https://docs.devin.ai/integrations/slack\\\",\\\"quote\\\":\\\"Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations.\\\",\\\"reason\\\":\\\"Slack sessions with thread sync; plan/charges and availability not evaluated.\\\"},{\\\"productId\\\":\\\"claude-tag\\\",\\\"citation\\\":\\\"https://claude.com/product/tag\\\",\\\"quote\\\":\\\"Shared Slack agent identity, thread context, channel-scoped memory, admin-configured channel access, standing instructions and long-running tasks.\\\",\\\"reason\\\":\\\"Slack agent with thread context; Team/Enterprise plan required.\\\"}],\\\"reason\\\":\\\"Three documented Slack integrations accept development work and support threaded follow-up; availability/plan details are uncertain as noted.\\\"},{\\\"id\\\":\\\"c-selfhost-identities\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"threads-space\\\",\\\"citation\\\":\\\"https://www.threads.space/\\\",\\\"quote\\\":\\\"MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks.\\\",\\\"reason\\\":\\\"Self-hosted Cloudflare chat with channels/threads, named bot identities, and MCP/REST/WebSocket/webhooks for external agents.\\\"}],\\\"reason\\\":\\\"Threads documents self-hosting on Cloudflare with channels/threads, bot identities, and the required integration protocols.\\\"},{\\\"id\\\":\\\"c-public-security\\\",\\\"abstain\\\":true,\\\"recommendations\\\":[],\\\"reason\\\":\\\"No supplied source proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls together.\\\"},{\\\"id\\\":\\\"c-host-isolation\\\",\\\"abstain\\\":true,\\\"recommendations\\\":[],\\\"reason\\\":\\\"No supplied source establishes that channel-invitation-only membership isolates an untrusted guest from the entire Host, owner APIs, and all other sessions; dsh-channels explicitly states channel membership does not isolate the wider Host.\\\"}]}\"}],\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"usage\":{\"input_tokens\":1894,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":804,\"service_tier\":\"standard\"}}",
+      "responseSha256": "bc95de62e98d61e7ba92409bf670874b70e9ea50724da90e0040581894540c9e",
+      "providerResponseId": "809862b1-70f0-431e-88da-b3e7efa16e96",
+      "usage": {
+        "input_tokens": 1894,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 804,
+        "service_tier": "standard"
+      },
+      "rawModelText": "{\"cases\":[{\"id\":\"c-mention-native\",\"abstain\":false,\"recommendations\":[{\"productId\":\"dsh-channels\",\"citation\":\"https://github.com/liush2yuxjtu/dsh-channels\",\"quote\":\"Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session.\",\"reason\":\"Explicit mention-only triggering, ordinary replies do not invoke the agent, and thread mentions continue the native DSH session.\"}],\"reason\":\"dsh-channels explicitly documents all three requirements.\"},{\"id\":\"c-standing-team\",\"abstain\":false,\"recommendations\":[{\"productId\":\"dsh-agent-team\",\"citation\":\"https://github.com/Contexera/dsh-agent-team\",\"quote\":\"Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger.\",\"reason\":\"Persistent named members with task ownership and inbox messaging between agents.\"},{\"productId\":\"nanmicoder-agent-teams\",\"citation\":\"https://github.com/NanmiCoder/dsh-agent-teams\",\"quote\":\"Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel.\",\"reason\":\"Durable sub-agents with dependency-aware tasks and direct mailbox handoff.\"}],\"reason\":\"Both documented DSH agent-team products provide persistent identities, assigned work, and inter-agent handoff.\"},{\"id\":\"c-existing-slack\",\"abstain\":false,\"recommendations\":[{\"productId\":\"openhands-slack\",\"citation\":\"https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace\",\"quote\":\"Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation.\",\"reason\":\"Slack development requests with threaded follow-up; beta announcement, current availability unknown.\"},{\"productId\":\"devin-slack\",\"citation\":\"https://docs.devin.ai/integrations/slack\",\"quote\":\"Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations.\",\"reason\":\"Slack sessions with thread sync; plan/charges and availability not evaluated.\"},{\"productId\":\"claude-tag\",\"citation\":\"https://claude.com/product/tag\",\"quote\":\"Shared Slack agent identity, thread context, channel-scoped memory, admin-configured channel access, standing instructions and long-running tasks.\",\"reason\":\"Slack agent with thread context; Team/Enterprise plan required.\"}],\"reason\":\"Three documented Slack integrations accept development work and support threaded follow-up; availability/plan details are uncertain as noted.\"},{\"id\":\"c-selfhost-identities\",\"abstain\":false,\"recommendations\":[{\"productId\":\"threads-space\",\"citation\":\"https://www.threads.space/\",\"quote\":\"MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks.\",\"reason\":\"Self-hosted Cloudflare chat with channels/threads, named bot identities, and MCP/REST/WebSocket/webhooks for external agents.\"}],\"reason\":\"Threads documents self-hosting on Cloudflare with channels/threads, bot identities, and the required integration protocols.\"},{\"id\":\"c-public-security\",\"abstain\":true,\"recommendations\":[],\"reason\":\"No supplied source proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls together.\"},{\"id\":\"c-host-isolation\",\"abstain\":true,\"recommendations\":[],\"reason\":\"No supplied source establishes that channel-invitation-only membership isolates an untrusted guest from the entire Host, owner APIs, and all other sessions; dsh-channels explicitly states channel membership does not isolate the wider Host.\"}]}",
+      "cases": [
+        {
+          "id": "c-mention-native",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "dsh-channels",
+              "citation": "https://github.com/liush2yuxjtu/dsh-channels",
+              "quote": "Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session.",
+              "reason": "Explicit mention-only triggering, ordinary replies do not invoke the agent, and thread mentions continue the native DSH session."
+            }
+          ],
+          "reason": "dsh-channels explicitly documents all three requirements.",
+          "eligibleProducts": [
+            "dsh-channels"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "dsh-channels",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-standing-team",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "dsh-agent-team",
+              "citation": "https://github.com/Contexera/dsh-agent-team",
+              "quote": "Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger.",
+              "reason": "Persistent named members with task ownership and inbox messaging between agents."
+            },
+            {
+              "productId": "nanmicoder-agent-teams",
+              "citation": "https://github.com/NanmiCoder/dsh-agent-teams",
+              "quote": "Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel.",
+              "reason": "Durable sub-agents with dependency-aware tasks and direct mailbox handoff."
+            }
+          ],
+          "reason": "Both documented DSH agent-team products provide persistent identities, assigned work, and inter-agent handoff.",
+          "eligibleProducts": [
+            "dsh-agent-team",
+            "nanmicoder-agent-teams",
+            "dsh-chaos"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "dsh-agent-team",
+              "urlMatches": true,
+              "quoteMatches": true
+            },
+            {
+              "productId": "nanmicoder-agent-teams",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-existing-slack",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "openhands-slack",
+              "citation": "https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace",
+              "quote": "Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation.",
+              "reason": "Slack development requests with threaded follow-up; beta announcement, current availability unknown."
+            },
+            {
+              "productId": "devin-slack",
+              "citation": "https://docs.devin.ai/integrations/slack",
+              "quote": "Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations.",
+              "reason": "Slack sessions with thread sync; plan/charges and availability not evaluated."
+            },
+            {
+              "productId": "claude-tag",
+              "citation": "https://claude.com/product/tag",
+              "quote": "Shared Slack agent identity, thread context, channel-scoped memory, admin-configured channel access, standing instructions and long-running tasks.",
+              "reason": "Slack agent with thread context; Team/Enterprise plan required."
+            }
+          ],
+          "reason": "Three documented Slack integrations accept development work and support threaded follow-up; availability/plan details are uncertain as noted.",
+          "eligibleProducts": [
+            "devin-slack",
+            "openhands-slack",
+            "claude-tag"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "openhands-slack",
+              "urlMatches": true,
+              "quoteMatches": true
+            },
+            {
+              "productId": "devin-slack",
+              "urlMatches": true,
+              "quoteMatches": true
+            },
+            {
+              "productId": "claude-tag",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-selfhost-identities",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "threads-space",
+              "citation": "https://www.threads.space/",
+              "quote": "MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks.",
+              "reason": "Self-hosted Cloudflare chat with channels/threads, named bot identities, and MCP/REST/WebSocket/webhooks for external agents."
+            }
+          ],
+          "reason": "Threads documents self-hosting on Cloudflare with channels/threads, bot identities, and the required integration protocols.",
+          "eligibleProducts": [
+            "threads-space"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "threads-space",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-public-security",
+          "abstain": true,
+          "recommendations": [],
+          "reason": "No supplied source proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls together.",
+          "eligibleProducts": [],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-host-isolation",
+          "abstain": true,
+          "recommendations": [],
+          "reason": "No supplied source establishes that channel-invitation-only membership isolates an untrusted guest from the entire Host, owner APIs, and all other sessions; dsh-channels explicitly states channel membership does not isolate the wider Host.",
+          "eligibleProducts": [],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        }
+      ],
+      "passRate": 1,
+      "status": "MEASURED"
+    },
+    {
+      "sampleId": 2,
+      "startedAt": "2026-11-10T15:19:50.440Z",
+      "provider": "DeepSeek official Anthropic-compatible API",
+      "model": "deepseek-flash",
+      "sourceOrder": [
+        "claude-tag",
+        "agentchattr",
+        "openhands-slack",
+        "dsh-chatroom",
+        "threads-space",
+        "dsh-agent-team",
+        "nanmicoder-agent-teams",
+        "dsh-channels",
+        "devin-slack",
+        "dsh-chaos"
+      ],
+      "promptSha256": "31c2aa86028020a9f3ee9fb5a3e9d2550988aad43cf62db705276e19a40d14e7",
+      "httpStatus": 200,
+      "rawBody": "{\"id\":\"8f095c30-1753-4557-8016-ae3979c8203f\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"deepseek-flash\",\"content\":[{\"type\":\"text\",\"text\":\"{\\\"cases\\\":[{\\\"id\\\":\\\"c-mention-native\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"dsh-channels\\\",\\\"citation\\\":\\\"https://github.com/liush2yuxjtu/dsh-channels\\\",\\\"quote\\\":\\\"Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session.\\\",\\\"reason\\\":\\\"Explicit mention-only trigger, ordinary replies never invoke the agent, and thread mentions continue the native DSH session.\\\"}],\\\"reason\\\":\\\"DSH Channels explicitly documents mention-only activation and native session continuation in threads.\\\"},{\\\"id\\\":\\\"c-standing-team\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"dsh-agent-team\\\",\\\"citation\\\":\\\"https://github.com/Contexera/dsh-agent-team\\\",\\\"quote\\\":\\\"Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger.\\\",\\\"reason\\\":\\\"Persistent named members with task ownership and inbox messaging between agents.\\\"},{\\\"productId\\\":\\\"nanmicoder-agent-teams\\\",\\\"citation\\\":\\\"https://github.com/NanmiCoder/dsh-agent-teams\\\",\\\"quote\\\":\\\"Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel.\\\",\\\"reason\\\":\\\"Durable sub-agents with assigned tasks and direct mailbox handoff.\\\"}],\\\"reason\\\":\\\"Both dsh-agent-team and dsh-agent-teams document persistent named agents with task assignment and inter-agent messaging.\\\"},{\\\"id\\\":\\\"c-existing-slack\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"openhands-slack\\\",\\\"citation\\\":\\\"https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace\\\",\\\"quote\\\":\\\"Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation.\\\",\\\"reason\\\":\\\"Development requests and threaded follow-up in existing Slack; beta announcement, current availability unknown.\\\"},{\\\"productId\\\":\\\"devin-slack\\\",\\\"citation\\\":\\\"https://docs.devin.ai/integrations/slack\\\",\\\"quote\\\":\\\"Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations.\\\",\\\"reason\\\":\\\"Coding sessions in existing Slack with thread sync; plan/charges and some features' availability not evaluated.\\\"}],\\\"reason\\\":\\\"OpenHands Slack and Devin Slack document coding work in an existing Slack workspace with threaded follow-up; availability/plan details are uncertain.\\\"},{\\\"id\\\":\\\"c-selfhost-identities\\\",\\\"abstain\\\":false,\\\"recommendations\\\":[{\\\"productId\\\":\\\"threads-space\\\",\\\"citation\\\":\\\"https://www.threads.space/\\\",\\\"quote\\\":\\\"MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks.\\\",\\\"reason\\\":\\\"Self-hosted chat with named bot identities, channels/threads, and MCP/REST/WebSocket/webhooks; Cloudflare deployment and external agents noted as unknowns.\\\"}],\\\"reason\\\":\\\"Threads documents self-hosted channels/threads, bot identities, and the required integration protocols; Cloudflare deployment is not fully verified.\\\"},{\\\"id\\\":\\\"c-public-security\\\",\\\"abstain\\\":true,\\\"recommendations\\\":[],\\\"reason\\\":\\\"No supplied source proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls for a production-ready public multi-tenant service.\\\"},{\\\"id\\\":\\\"c-host-isolation\\\",\\\"abstain\\\":true,\\\"recommendations\\\":[],\\\"reason\\\":\\\"No supplied source establishes that channel-invitation-only membership isolates an untrusted guest from the entire coding-agent Host, owner APIs, and all other sessions; dsh-channels explicitly states channel membership does not isolate the wider Host.\\\"}]}\"}],\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"usage\":{\"input_tokens\":1638,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":256,\"output_tokens\":778,\"service_tier\":\"standard\"}}",
+      "responseSha256": "91e059f6955b7f9166e696beea35cd71c8c5257fa44a7dd5b82c6a77d5a0308a",
+      "providerResponseId": "8f095c30-1753-4557-8016-ae3979c8203f",
+      "usage": {
+        "input_tokens": 1638,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 256,
+        "output_tokens": 778,
+        "service_tier": "standard"
+      },
+      "rawModelText": "{\"cases\":[{\"id\":\"c-mention-native\",\"abstain\":false,\"recommendations\":[{\"productId\":\"dsh-channels\",\"citation\":\"https://github.com/liush2yuxjtu/dsh-channels\",\"quote\":\"Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session.\",\"reason\":\"Explicit mention-only trigger, ordinary replies never invoke the agent, and thread mentions continue the native DSH session.\"}],\"reason\":\"DSH Channels explicitly documents mention-only activation and native session continuation in threads.\"},{\"id\":\"c-standing-team\",\"abstain\":false,\"recommendations\":[{\"productId\":\"dsh-agent-team\",\"citation\":\"https://github.com/Contexera/dsh-agent-team\",\"quote\":\"Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger.\",\"reason\":\"Persistent named members with task ownership and inbox messaging between agents.\"},{\"productId\":\"nanmicoder-agent-teams\",\"citation\":\"https://github.com/NanmiCoder/dsh-agent-teams\",\"quote\":\"Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel.\",\"reason\":\"Durable sub-agents with assigned tasks and direct mailbox handoff.\"}],\"reason\":\"Both dsh-agent-team and dsh-agent-teams document persistent named agents with task assignment and inter-agent messaging.\"},{\"id\":\"c-existing-slack\",\"abstain\":false,\"recommendations\":[{\"productId\":\"openhands-slack\",\"citation\":\"https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace\",\"quote\":\"Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation.\",\"reason\":\"Development requests and threaded follow-up in existing Slack; beta announcement, current availability unknown.\"},{\"productId\":\"devin-slack\",\"citation\":\"https://docs.devin.ai/integrations/slack\",\"quote\":\"Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations.\",\"reason\":\"Coding sessions in existing Slack with thread sync; plan/charges and some features' availability not evaluated.\"}],\"reason\":\"OpenHands Slack and Devin Slack document coding work in an existing Slack workspace with threaded follow-up; availability/plan details are uncertain.\"},{\"id\":\"c-selfhost-identities\",\"abstain\":false,\"recommendations\":[{\"productId\":\"threads-space\",\"citation\":\"https://www.threads.space/\",\"quote\":\"MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks.\",\"reason\":\"Self-hosted chat with named bot identities, channels/threads, and MCP/REST/WebSocket/webhooks; Cloudflare deployment and external agents noted as unknowns.\"}],\"reason\":\"Threads documents self-hosted channels/threads, bot identities, and the required integration protocols; Cloudflare deployment is not fully verified.\"},{\"id\":\"c-public-security\",\"abstain\":true,\"recommendations\":[],\"reason\":\"No supplied source proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls for a production-ready public multi-tenant service.\"},{\"id\":\"c-host-isolation\",\"abstain\":true,\"recommendations\":[],\"reason\":\"No supplied source establishes that channel-invitation-only membership isolates an untrusted guest from the entire coding-agent Host, owner APIs, and all other sessions; dsh-channels explicitly states channel membership does not isolate the wider Host.\"}]}",
+      "cases": [
+        {
+          "id": "c-mention-native",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "dsh-channels",
+              "citation": "https://github.com/liush2yuxjtu/dsh-channels",
+              "quote": "Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session.",
+              "reason": "Explicit mention-only trigger, ordinary replies never invoke the agent, and thread mentions continue the native DSH session."
+            }
+          ],
+          "reason": "DSH Channels explicitly documents mention-only activation and native session continuation in threads.",
+          "eligibleProducts": [
+            "dsh-channels"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "dsh-channels",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-standing-team",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "dsh-agent-team",
+              "citation": "https://github.com/Contexera/dsh-agent-team",
+              "quote": "Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger.",
+              "reason": "Persistent named members with task ownership and inbox messaging between agents."
+            },
+            {
+              "productId": "nanmicoder-agent-teams",
+              "citation": "https://github.com/NanmiCoder/dsh-agent-teams",
+              "quote": "Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel.",
+              "reason": "Durable sub-agents with assigned tasks and direct mailbox handoff."
+            }
+          ],
+          "reason": "Both dsh-agent-team and dsh-agent-teams document persistent named agents with task assignment and inter-agent messaging.",
+          "eligibleProducts": [
+            "dsh-agent-team",
+            "nanmicoder-agent-teams",
+            "dsh-chaos"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "dsh-agent-team",
+              "urlMatches": true,
+              "quoteMatches": true
+            },
+            {
+              "productId": "nanmicoder-agent-teams",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-existing-slack",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "openhands-slack",
+              "citation": "https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace",
+              "quote": "Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation.",
+              "reason": "Development requests and threaded follow-up in existing Slack; beta announcement, current availability unknown."
+            },
+            {
+              "productId": "devin-slack",
+              "citation": "https://docs.devin.ai/integrations/slack",
+              "quote": "Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations.",
+              "reason": "Coding sessions in existing Slack with thread sync; plan/charges and some features' availability not evaluated."
+            }
+          ],
+          "reason": "OpenHands Slack and Devin Slack document coding work in an existing Slack workspace with threaded follow-up; availability/plan details are uncertain.",
+          "eligibleProducts": [
+            "devin-slack",
+            "openhands-slack",
+            "claude-tag"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "openhands-slack",
+              "urlMatches": true,
+              "quoteMatches": true
+            },
+            {
+              "productId": "devin-slack",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-selfhost-identities",
+          "abstain": false,
+          "recommendations": [
+            {
+              "productId": "threads-space",
+              "citation": "https://www.threads.space/",
+              "quote": "MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks.",
+              "reason": "Self-hosted chat with named bot identities, channels/threads, and MCP/REST/WebSocket/webhooks; Cloudflare deployment and external agents noted as unknowns."
+            }
+          ],
+          "reason": "Threads documents self-hosted channels/threads, bot identities, and the required integration protocols; Cloudflare deployment is not fully verified.",
+          "eligibleProducts": [
+            "threads-space"
+          ],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [
+            {
+              "productId": "threads-space",
+              "urlMatches": true,
+              "quoteMatches": true
+            }
+          ],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-public-security",
+          "abstain": true,
+          "recommendations": [],
+          "reason": "No supplied source proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls for a production-ready public multi-tenant service.",
+          "eligibleProducts": [],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        },
+        {
+          "id": "c-host-isolation",
+          "abstain": true,
+          "recommendations": [],
+          "reason": "No supplied source establishes that channel-invitation-only membership isolates an untrusted guest from the entire coding-agent Host, owner APIs, and all other sessions; dsh-channels explicitly states channel membership does not isolate the wider Host.",
+          "eligibleProducts": [],
+          "eligibilityCorrect": true,
+          "citationAnchors": true,
+          "anchors": [],
+          "pass": true,
+          "claimEntailment": "UNVERIFIED: matching URL and literal quote do not prove the recommendation or all answer claims"
+        }
+      ],
+      "passRate": 1,
+      "status": "MEASURED"
+    }
+  ],
+  "interpretation": "Balanced capped summary-card closed-corpus selection check. Not external retrieval, public recommendation share, semantic entailment proof, or a before/after GEO gain. Curated eligibility may be incomplete; inspect raw answers. No holdout or docs changes selected by this correction."
+}

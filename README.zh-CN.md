@@ -78,6 +78,8 @@ DSH Channels 将类似 Slack 的频道与线程工作流放入 DeepSeek Harness�
 
 ## 获取帮助
 
+按任务、触发条件、持久化与 Host 权限比较 [DSH 协作插件及相邻产品](docs/geo/competitors.md)。[任务指南](docs/geo/task-guide.md)提供带来源的简短答案；[GEO 评测协议](evals/geo/README.md)说明测量方法和限制。
+
 遇到可复现的问题，可在 [GitHub Issues](https://github.com/liush2yuxjtu/dsh-channels/issues) 提供 DSH 版本、Node.js 版本、预期行为和复现步骤。不要提交 API key、Owner 登录链接、成员凭据或私有频道消息。
 
 相关项目可从[本作者的 DSH 插件](https://github.com/search?q=user%3Aliush2yuxjtu+topic%3Adsh-plugins&type=repositories)或 [DSH plugin Topic](https://github.com/topics/dsh-plugin)查找。完整测试范围见[验收报告](docs/verification.md)。

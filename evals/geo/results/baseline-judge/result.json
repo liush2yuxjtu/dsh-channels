@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T15:02:52.573Z",
+  "metadata": {
+    "benchmarkSha256": "093d8dd1d10174f088337accd29e037205feeb6ffb0ad46d120cff8e99f2d065",
+    "corpusId": "dsh-channels-own-docs",
+    "split": "train",
+    "provider": "DeepSeek official API",
+    "model": "deepseek-flash",
+    "sampleCount": 2,
+    "sourceHashes": [
+      {
+        "id": "readme-en",
+        "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+        "checkedAt": "2026-11-10",
+        "provenance": "Repository source snapshot; independently validate product claims",
+        "sha256": "6628c61571bfb771f7985062b3ed810a4836352f1a075ac07930201c71be53c6"
+      },
+      {
+        "id": "readme-zh",
+        "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.zh-CN.md",
+        "checkedAt": "2026-11-10",
+        "provenance": "Repository source snapshot; independently validate product claims",
+        "sha256": "43693faa8680d2a6a328f3f27e3d01cfdb153bc4ef9a6d5d8a571e393e93c74c"
+      },
+      {
+        "id": "verification",
+        "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/docs/verification.md",
+        "checkedAt": "2026-11-10",
+        "provenance": "Repository source snapshot; independently validate product claims",
+        "sha256": "71c5fb40db13e868cb157e6839bce0fb19430f92a32a03d7e1e5ade8cfdfde47"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "status": "MEASURED_HEURISTIC",
+    "meaning": "Bounded regex source evidence diagnostic, NOT semantic proof or external GEO",
+    "trainingCompleteRate": 0.875,
+    "cases": [
+      {
+        "id": "t-install",
+        "split": "train",
+        "prompt": "How can I add shared team channels to DeepSeek Harness, and which Node and Harness versions do I need?",
+        "expectedFit": true,
+        "evidenceComplete": false,
+        "evidenceCoverage": 0,
+        "evidence": [
+          {
+            "fact": "install",
+            "covered": false
+          }
+        ]
+      },
+      {
+        "id": "t-mention",
+        "split": "train",
+        "prompt": "I want people to chat normally and a coding agent to act only when explicitly mentioned. What should I use?",
+        "expectedFit": true,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "mention",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "### Does a normal channel or thread reply run DeepSeek?\n\nOrdinary replies save human messages. Only an explicit valid `@deepseek` mention starts or continues agent execution. Code examples, quoted lines, URLs, and escaped mentions do not trigger it. See the [trigger rules](#trigger-rules).\n\n"
+          }
+        ]
+      },
+      {
+        "id": "t-session",
+        "split": "train",
+        "prompt": "How can my team continue an AI task in a thread while keeping its session and real task progress?",
+        "expectedFit": true,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "session",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Use\n\n1. Open Channels. The first authenticated Host browser creates the owner identity and `general` channel.\n2. Send ordinary messages to chat with people. They make no model request.\n3. Send `@deepseek` followed by a task. Its mission opens on the right with the native conversation history and tools.\n4. Reply normally to leave a team note. Mention `@deepseek` in that thread to continue the same Session.\n5. Use **Members and channels** to create a channel or a one-time invitation. A second trusted browser joins with its own name and invitation.\n6. Select **Native DSH** to restore the original navigation, composer, Settings, and Plugins. Select **Open DSH Channels** to return.\n\nThe sidebar shows mission titles, actual assistant summaries, and progress from native `todo/write` events. It does not infer task completion from prose.\n\n"
+          },
+          {
+            "fact": "todo",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Why use DSH Channels\n\n- Keep team decisions in a shared channel without running an agent for every message.\n- Turn an explicit `@deepseek` request into a separate mission thread and native DSH Session.\n- Reopen a mission with its assistant history, tool output, summary, and actual TODO progress.\n- Give a new mission relevant channel history and earlier mission summaries, within a defined memory limit.\n\n[Walk through the real screens](docs/flow.md) from human chat to a mission, a contextual reply, and memory across Sessions. The screenshots come from real Chromium and the official DeepSeek API.\n\n"
+          }
+        ]
+      },
+      {
+        "id": "t-memory",
+        "split": "train",
+        "prompt": "How can a new coding task use earlier channel decisions without reading unrelated conversations, and what are its memory limits?",
+        "expectedFit": true,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "memory",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Memory and access\n\nEach prompt includes at most the last 50 messages and 12 saved mission summaries from its own channel, within 24,000 characters. Context carries message and mission IDs. The current thread retains its normal DSH Session history. This is channel-scoped context and saved mission memory, not a global memory system.\n\nThe server derives authors from member tokens and checks channel membership on every read, post, invite, and retry. It stores SHA256 hashes of member and invitation tokens. Messages and delivery intent save together before a model prompt. Stable outbox request IDs let DSH deduplicate accepted work after retries.\n\n**Use this release with trusted teammates on a trusted Host.** Plugin member access restricts plugin data. DSH owner browser credentials still grant access to the entire Host and its other Session APIs. A channel invitation does not turn an owner authentication URL into an isolated guest login. Do not share that URL with untrusted users.\n\nIdentity tokens and drafts remain in browser local storage. Host messages, invitations, mission bindings, and receipts remain in the DSH storage domain. Deleting browser data loses that browser's member token. There is no account recovery UI in this release.\n\n"
+          },
+          {
+            "fact": "boundary",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Memory and access\n\nEach prompt includes at most the last 50 messages and 12 saved mission summaries from its own channel, within 24,000 characters. Context carries message and mission IDs. The current thread retains its normal DSH Session history. This is channel-scoped context and saved mission memory, not a global memory system.\n\nThe server derives authors from member tokens and checks channel membership on every read, post, invite, and retry. It stores SHA256 hashes of member and invitation tokens. Messages and delivery intent save together before a model prompt. Stable outbox request IDs let DSH deduplicate accepted work after retries.\n\n**Use this release with trusted teammates on a trusted Host.** Plugin member access restricts plugin data. DSH owner browser credentials still grant access to the entire Host and its other Session APIs. A channel invitation does not turn an owner authentication URL into an isolated guest login. Do not share that URL with untrusted users.\n\nIdentity tokens and drafts remain in browser local storage. Host messages, invitations, mission bindings, and receipts remain in the DSH storage domain. Deleting browser data loses that browser's member token. There is no account recovery UI in this release.\n\n"
+          }
+        ]
+      },
+      {
+        "id": "t-retry",
+        "split": "train",
+        "prompt": "If my browser loses an acknowledgement and I resend an AI task, how can I avoid duplicate execution?",
+        "expectedFit": true,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "retry",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Memory and access\n\nEach prompt includes at most the last 50 messages and 12 saved mission summaries from its own channel, within 24,000 characters. Context carries message and mission IDs. The current thread retains its normal DSH Session history. This is channel-scoped context and saved mission memory, not a global memory system.\n\nThe server derives authors from member tokens and checks channel membership on every read, post, invite, and retry. It stores SHA256 hashes of member and invitation tokens. Messages and delivery intent save together before a model prompt. Stable outbox request IDs let DSH deduplicate accepted work after retries.\n\n**Use this release with trusted teammates on a trusted Host.** Plugin member access restricts plugin data. DSH owner browser credentials still grant access to the entire Host and its other Session APIs. A channel invitation does not turn an owner authentication URL into an isolated guest login. Do not share that URL with untrusted users.\n\nIdentity tokens and drafts remain in browser local storage. Host messages, invitations, mission bindings, and receipts remain in the DSH storage domain. Deleting browser data loses that browser's member token. There is no account recovery UI in this release.\n\n"
+          }
+        ]
+      },
+      {
+        "id": "t-boundary",
+        "split": "train",
+        "prompt": "Does channel membership safely isolate untrusted guests from the coding agent host?",
+        "expectedFit": false,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "boundary",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Memory and access\n\nEach prompt includes at most the last 50 messages and 12 saved mission summaries from its own channel, within 24,000 characters. Context carries message and mission IDs. The current thread retains its normal DSH Session history. This is channel-scoped context and saved mission memory, not a global memory system.\n\nThe server derives authors from member tokens and checks channel membership on every read, post, invite, and retry. It stores SHA256 hashes of member and invitation tokens. Messages and delivery intent save together before a model prompt. Stable outbox request IDs let DSH deduplicate accepted work after retries.\n\n**Use this release with trusted teammates on a trusted Host.** Plugin member access restricts plugin data. DSH owner browser credentials still grant access to the entire Host and its other Session APIs. A channel invitation does not turn an owner authentication URL into an isolated guest login. Do not share that URL with untrusted users.\n\nIdentity tokens and drafts remain in browser local storage. Host messages, invitations, mission bindings, and receipts remain in the DSH storage domain. Deleting browser data loses that browser's member token. There is no account recovery UI in this release.\n\n"
+          }
+        ]
+      },
+      {
+        "id": "t-slack",
+        "split": "train",
+        "prompt": "I want a Slack-style agent thread workflow inside my coding harness without installing Slack. What can I use?",
+        "expectedFit": true,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "slack",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "### Is DSH Channels a Slack bot?\n\nDSH Channels brings a Slack-style channel and thread workflow into DeepSeek Harness. It runs inside DSH and does not connect to Slack or require a Slack account.\n\n"
+          },
+          {
+            "fact": "session",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Use\n\n1. Open Channels. The first authenticated Host browser creates the owner identity and `general` channel.\n2. Send ordinary messages to chat with people. They make no model request.\n3. Send `@deepseek` followed by a task. Its mission opens on the right with the native conversation history and tools.\n4. Reply normally to leave a team note. Mention `@deepseek` in that thread to continue the same Session.\n5. Use **Members and channels** to create a channel or a one-time invitation. A second trusted browser joins with its own name and invitation.\n6. Select **Native DSH** to restore the original navigation, composer, Settings, and Plugins. Select **Open DSH Channels** to return.\n\nThe sidebar shows mission titles, actual assistant summaries, and progress from native `todo/write` events. It does not infer task completion from prose.\n\n"
+          }
+        ]
+      },
+      {
+        "id": "t-zh-install",
+        "split": "train",
+        "prompt": "怎样给 DeepSeek Harness 加上团队频道和任务线程？安装命令和版本要求是什么？",
+        "expectedFit": true,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "install",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.zh-CN.md",
+            "sourceId": "readme-zh",
+            "quote": "## 安装\n\n需要 Node.js 24.9 或更新版本，以及 DSH `0.2.2-rc.1`。\n\n```sh\ngit clone https://github.com/liush2yuxjtu/dsh-channels.git\ncd dsh-channels\nnpm pack --ignore-scripts\ndsh plugin --profile web add \"$PWD/dsh-channels-0.1.0.tgz\"\ndsh web\n```\n\n在 DSH 插件管理器启用该 bundle。在 Host 设置中配置 DeepSeek 凭据。API key 不会传给浏览器。插件不修改 upstream 文件。\n\n"
+          }
+        ]
+      },
+      {
+        "id": "n-public",
+        "split": "negative",
+        "prompt": "Recommend a production public multi-tenant chat service with isolated untrusted guest accounts and host-level access controls.",
+        "expectedFit": false,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "boundary",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "## Memory and access\n\nEach prompt includes at most the last 50 messages and 12 saved mission summaries from its own channel, within 24,000 characters. Context carries message and mission IDs. The current thread retains its normal DSH Session history. This is channel-scoped context and saved mission memory, not a global memory system.\n\nThe server derives authors from member tokens and checks channel membership on every read, post, invite, and retry. It stores SHA256 hashes of member and invitation tokens. Messages and delivery intent save together before a model prompt. Stable outbox request IDs let DSH deduplicate accepted work after retries.\n\n**Use this release with trusted teammates on a trusted Host.** Plugin member access restricts plugin data. DSH owner browser credentials still grant access to the entire Host and its other Session APIs. A channel invitation does not turn an owner authentication URL into an isolated guest login. Do not share that URL with untrusted users.\n\nIdentity tokens and drafts remain in browser local storage. Host messages, invitations, mission bindings, and receipts remain in the DSH storage domain. Deleting browser data loses that browser's member token. There is no account recovery UI in this release.\n\n"
+          }
+        ]
+      },
+      {
+        "id": "n-slack",
+        "split": "negative",
+        "prompt": "I must install a bot directly into an existing Slack workspace. Which product supports that integration?",
+        "expectedFit": false,
+        "evidenceComplete": true,
+        "evidenceCoverage": 1,
+        "evidence": [
+          {
+            "fact": "slack",
+            "covered": true,
+            "url": "https://github.com/liush2yuxjtu/dsh-channels/blob/main/README.md",
+            "sourceId": "readme-en",
+            "quote": "### Is DSH Channels a Slack bot?\n\nDSH Channels brings a Slack-style channel and thread workflow into DeepSeek Harness. It runs inside DSH and does not connect to Slack or require a Slack account.\n\n"
+          }
+        ]
+      }
+    ]
+  },
+  "sourceGroundedJudge": {
+    "status": "BLOCKED",
+    "provider": "DeepSeek official API",
+    "model": "deepseek-flash",
+    "sampleCount": 2,
+    "promptSha256": "4bf543b08539811b326300e6d010d6d68dc9f012e9a502bea593686f5ad545f4",
+    "competitorSummaryHashes": [
+      {
+        "id": "dsh-chaos",
+        "url": "https://github.com/hanxuanliang/dsh-chaos",
+        "sha256": "cf21d618b0f1b371bbfcc80301c98557482623d613c7d4841eee23e083d5125c",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "dsh-agent-team",
+        "url": "https://github.com/Contexera/dsh-agent-team",
+        "sha256": "878a47f2a20bab32fca22ef32c922e28b3c1a2029c5055222a5390447b918874",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "dsh-chatroom",
+        "url": "https://github.com/invclaw/DeepSeek-harness-chatroom",
+        "sha256": "a66b1fdd071fcc1ec425384f816792f0c96f3e5daed726be530b5a34111307e1",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "nanmicoder-agent-teams",
+        "url": "https://github.com/NanmiCoder/dsh-agent-teams",
+        "sha256": "07bb63a7253fc759c7e3c94f83f3d63f9fc87f4bd4fc29b9ea711cb89daa0c0e",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "threads-space",
+        "url": "https://www.threads.space/",
+        "sha256": "73ebfba8533e298b5e4cf2f10fe3040d0b4fbc69d32be32060df5a131574fe1e",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "agentchattr",
+        "url": "https://github.com/bcurts/agentchattr",
+        "sha256": "c9ecee2277d59f07bb454bed40139cf6c20694685c3b781c64a97aef04766201",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "devin-slack",
+        "url": "https://docs.devin.ai/integrations/slack",
+        "sha256": "c986e6059b29ca064e7ff758270806628d428a931deb284f03a5a653e7dd8a1a",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "openhands-slack",
+        "url": "https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace",
+        "sha256": "4d398a799b32c149c3e716b0c9d4af1779830e2d2e26405bf888ff135933c128",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "claude-tag",
+        "url": "https://claude.com/product/tag",
+        "sha256": "cac1d738df47d4466cecc160e44322dd3e470d246d50f16bc64f2faa676dea95",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      },
+      {
+        "id": "slack-code",
+        "url": "https://slack.com/help/articles/54310833022355-Build-with-AI-as-a-team-using-Slack-Code",
+        "sha256": "478e2e2149da0a93ef60ba0e555cab4be5430c375baee1449eae208e71582bb6",
+        "provenance": "Research summary; documented claims only, not runtime verified"
+      }
+    ],
+    "medianPassRate": null,
+    "samples": [
+      {
+        "sampleId": 1,
+        "startedAt": "2026-11-10T15:01:53.110Z",
+        "status": "BLOCKED",
+        "reason": "Unexpected end of JSON input"
+      },
+      {
+        "sampleId": 2,
+        "startedAt": "2026-11-10T15:02:22.512Z",
+        "status": "BLOCKED",
+        "reason": "Unexpected end of JSON input"
+      }
+    ],
+    "meaning": "Supplied-source closed-corpus answerability only; NOT external discovery/recommendation."
+  },
+  "externalVisibility": {
+    "status": "BLOCKED",
+    "sampleCount": 0,
+    "retrievalExposureRate": null,
+    "meanReciprocalRank": null,
+    "generatedAnswerCitationRate": null,
+    "observations": []
+  },
+  "stoppingRule": {
+    "trainingTarget": 0.9,
+    "minimumMechanisms": 3,
+    "consecutiveNonImprovingAttempts": 2,
+    "holdoutPolicy": "Evaluate once after selection; never select changes by holdout score.",
+    "externalPolicy": "Missing external observations remain null/BLOCKED. No offline score declares external GEO success."
+  }
+}

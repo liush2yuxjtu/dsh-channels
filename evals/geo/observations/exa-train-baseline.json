@@ -1,0 +1,258 @@
+[
+  {
+    "promptId": "t-install",
+    "query": "How can I add shared team channels to DeepSeek Harness, and which Node and Harness versions do I need?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://dsh-plugin.org/plugins/wowyuarm/dsh-agent-team"
+      },
+      {
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/team/agent-team/README.md"
+      },
+      {
+        "url": "https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams"
+      },
+      {
+        "url": "https://github.com/wsz987/dsh-channels"
+      },
+      {
+        "url": "https://github.com/toolclub/dsh-agent-team-gui/blob/HEAD/README-zh.md"
+      },
+      {
+        "url": "https://upd.dev/deepseek-ai/deepseek-harness/src/tag/dsh-v0.2.1-alpha.4/packages/experimental/tool-agent-team"
+      },
+      {
+        "url": "https://github.com/deepseek-ai/deepseek-harness"
+      },
+      {
+        "url": "https://github.com/toolclub/dsh-agent-team-gui/blob/main/README.md"
+      }
+    ]
+  },
+  {
+    "promptId": "t-mention",
+    "query": "I want people to chat normally and a coding agent to act only when explicitly mentioned. What should I use?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://github.com/farol-team/opentag"
+      },
+      {
+        "url": "https://github.com/lawrencehui/Citio"
+      },
+      {
+        "url": "https://coder.com/docs/ai-coder/agents/"
+      },
+      {
+        "url": "https://shinyay.github.io/getting-started-with-token-optimization/copilot/custom-agents/"
+      },
+      {
+        "url": "https://codingagent.fyi/read/system-prompt-engineering"
+      },
+      {
+        "url": "https://github.com/noboru2000/cc-agent-messenger"
+      },
+      {
+        "url": "https://weavemindai.github.io/weft/build/coding-agents.html"
+      },
+      {
+        "url": "https://github.com/Eric-Shih-Hsuan/agentchattr"
+      }
+    ]
+  },
+  {
+    "promptId": "t-session",
+    "query": "How can my team continue an AI task in a thread while keeping its session and real task progress?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://gee.edenic.ai/agents/foundations/sessions.md"
+      },
+      {
+        "url": "https://claude.com/docs/claude-tag/concepts/how-it-works"
+      },
+      {
+        "url": "https://code.claude.com/docs/en/agent-sdk/sessions"
+      },
+      {
+        "url": "https://learn.chatgpt.com/docs/long-running-work"
+      },
+      {
+        "url": "https://github.com/tonnestate/codex-session-controller-v2.0"
+      },
+      {
+        "url": "https://praison.ai/docs/features/team-checkpoint-resume/"
+      },
+      {
+        "url": "https://lody.ai/docs/session-orchestration/"
+      },
+      {
+        "url": "https://vibearound.ai/docs/session-handover/"
+      }
+    ]
+  },
+  {
+    "promptId": "t-memory",
+    "query": "How can a new coding task use earlier channel decisions without reading unrelated conversations, and what are its memory limits?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://ai.colab.duke.edu/colab-ai-blog/all-blogs/managing-context-in-coding-agent-conversations/"
+      },
+      {
+        "url": "https://github.com/The-Low-Code-Foundation/vibe-coding-docs/blob/main/docs/part-5/context-management.md"
+      },
+      {
+        "url": "https://code.claude.com/docs/en/memory"
+      },
+      {
+        "url": "https://sigilix.ai/research/bigger-context-windows-are-the-wrong-abstraction-for-coding-agents"
+      },
+      {
+        "url": "https://github.com/shareai-lab/learn-claude-code/blob/main/s09_memory/README.md"
+      },
+      {
+        "url": "https://zoviai.com/coding-agents-dont-need-longer-history-they-need-intent-continuity/"
+      },
+      {
+        "url": "https://dev.to/thetonynotes/why-does-your-coding-agent-keep-forgetting-things-56a5"
+      },
+      {
+        "url": "https://zerotofrontier.app/memory/context-management"
+      }
+    ]
+  },
+  {
+    "promptId": "t-retry",
+    "query": "If my browser loses an acknowledgement and I resend an AI task, how can I avoid duplicate execution?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://tanstack.com/ai/latest/docs/harness/inputs"
+      },
+      {
+        "url": "https://aiwithghost.com/news/news-a-timeout-is-an-unknown-outcome-handling-live-ai-acknowledgements/"
+      },
+      {
+        "url": "https://github.com/aantenore/pausemesh"
+      },
+      {
+        "url": "https://wavespeed.ai/blog/developer-friction/retry-video-generation-job-without-duplicates/"
+      },
+      {
+        "url": "https://dev.to/itimpress/a-timeout-is-not-a-failed-booking-designing-duplicate-safe-ai-actions-186e"
+      },
+      {
+        "url": "https://haidra-org.github.io/AI-Horde/decisions/0026-classify-client-retries-and-recover-submits-by-operation-key/"
+      },
+      {
+        "url": "https://sallyport.dev/blog/prevent-duplicate-api-writes"
+      },
+      {
+        "url": "https://nrml.dev/articles/ai-coding-retry-idempotency"
+      }
+    ]
+  },
+  {
+    "promptId": "t-boundary",
+    "query": "Does channel membership safely isolate untrusted guests from the coding agent host?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://docs.switchagents.ai/switch-rooms/resources/working-safely-with-agents"
+      },
+      {
+        "url": "https://dev.agent.space/blog/coding-agent-workspace-security"
+      },
+      {
+        "url": "https://alook.ai/blog/humans-and-ai-agents-in-one-room"
+      },
+      {
+        "url": "https://developer.tenten.co/qm-agent-multiplayer-security"
+      },
+      {
+        "url": "https://github.com/B2JK-Industry/Agent_Life_Space/wiki/Security"
+      },
+      {
+        "url": "https://www.quorus.dev/security"
+      },
+      {
+        "url": "https://usepoly.co/secure-shared-coding-agent-workspace"
+      },
+      {
+        "url": "https://github.com/kogangdon/gjc-remote/blob/main/SECURITY.md"
+      }
+    ]
+  },
+  {
+    "promptId": "t-slack",
+    "query": "I want a Slack-style agent thread workflow inside my coding harness without installing Slack. What can I use?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://agentrelay.net/"
+      },
+      {
+        "url": "https://github.com/DeightonLLM/open-tag"
+      },
+      {
+        "url": "https://github.com/hyperslack/talkto"
+      },
+      {
+        "url": "https://github.com/ChesterRa/cccc?tab=readme-ov-file"
+      },
+      {
+        "url": "https://github.com/relayroom/relayroom"
+      },
+      {
+        "url": "https://github.com/8w6s/xtalk"
+      },
+      {
+        "url": "https://github.com/leonletto/thrum"
+      },
+      {
+        "url": "https://pypi.org/project/tmux-agent-comms/0.2.0/"
+      }
+    ]
+  },
+  {
+    "promptId": "t-zh-install",
+    "query": "怎样给 DeepSeek Harness 加上团队频道和任务线程？安装命令和版本要求是什么？",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T14:55:31.436Z",
+    "results": [
+      {
+        "url": "https://github.com/Ready22Race/dsh-team-task"
+      },
+      {
+        "url": "https://github.com/wowyuarm/dsh-agent-team"
+      },
+      {
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/team/agent-team/README.md"
+      },
+      {
+        "url": "https://github.com/NanmiCoder/dsh-agent-teams/blob/main/README_ZH.md"
+      },
+      {
+        "url": "https://github.com/toolclub/dsh-agent-team-gui/blob/HEAD/README-zh.md"
+      },
+      {
+        "url": "https://github.com/nanmicoder/dsh-agent-teams/blob/HEAD/README_ZH.md"
+      },
+      {
+        "url": "https://dsh-plugin.org/zh/plugins/wowyuarm/dsh-agent-team"
+      },
+      {
+        "url": "https://github.com/huxint/dsh-team"
+      }
+    ]
+  }
+]

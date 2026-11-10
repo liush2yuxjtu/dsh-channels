@@ -1,0 +1,130 @@
+[
+  {
+    "promptId": "h-human-note",
+    "query": "团队只想给正在执行的任务留言，不希望每次回复都调用模型，之后又能继续原来的会话，有什么方案？",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T15:02:52.514Z",
+    "results": [
+      {
+        "url": "https://multica.ai/docs/zh/chat"
+      },
+      {
+        "url": "https://docs.nocobase.com/zh-CN/studio/use/follow-progress/"
+      },
+      {
+        "url": "https://github.com/Krual-T/OpenRelay"
+      },
+      {
+        "url": "https://docs.nextclaw.io/zh/guide/chat"
+      },
+      {
+        "url": "https://github.com/LinuxForYQH/muqi-task"
+      },
+      {
+        "url": "https://anakin.ai/zh-Hans/features/tasks/"
+      },
+      {
+        "url": "https://www.workbuddy.cn/docs/workbuddy/Conversation"
+      },
+      {
+        "url": "https://quire.io/guide/zh/comments/"
+      }
+    ]
+  },
+  {
+    "promptId": "h-budget-memory",
+    "query": "我需要本地 AI 协作保留频道历史，但不希望上下文无限增长。它会读多少条消息和多少历史任务？",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T15:02:52.514Z",
+    "results": [
+      {
+        "url": "https://github.com/poco-ai/poco-agent/blob/0d6a4b15/docs/zh/features/server-collaboration/shared-context-and-artifacts.mdx"
+      },
+      {
+        "url": "https://raft.build/zh-cn/"
+      },
+      {
+        "url": "https://blog.stv.pm/article/raft-untold-designs"
+      },
+      {
+        "url": "https://jit.pro/zh/docs/devguide/ai-agent/agent-context"
+      },
+      {
+        "url": "https://github.com/solo-agent/solo/blob/dddbd6e5/README.zh-CN.md"
+      },
+      {
+        "url": "https://hermes-agent.lzw.me/docs/user-guide/sessions"
+      },
+      {
+        "url": "https://huohu.ai/docs/guide/basics/memory-management"
+      },
+      {
+        "url": "https://www.163.com/dy/article/LAT6CBQ50511AQHO.html?clickfrom=w_dy"
+      }
+    ]
+  },
+  {
+    "promptId": "h-credential",
+    "query": "Can teammates use a browser to collaborate on coding tasks while the model API key stays on the host?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T15:02:52.514Z",
+    "results": [
+      {
+        "url": "https://github.com/chadbyte/clay/blob/main/README.md"
+      },
+      {
+        "url": "https://forkbench.com/"
+      },
+      {
+        "url": "https://github.com/carydy/VibeAround"
+      },
+      {
+        "url": "https://github.com/qwack-ai/qwack"
+      },
+      {
+        "url": "https://github.com/d-kimuson/remote-agent/blob/92d18762485533ca05b44789beeab56d33625de0/README.md"
+      },
+      {
+        "url": "https://github.com/kirincolor/openmesh"
+      },
+      {
+        "url": "https://hoki-poki.ai/"
+      },
+      {
+        "url": "https://github.com/muggle-stack/cc-remote"
+      }
+    ]
+  },
+  {
+    "promptId": "h-progress",
+    "query": "I need auditable task progress rather than a model saying it is done. Can I keep native task state beside a persistent agent conversation?",
+    "provider": "Exa web_search_exa",
+    "checkedAt": "2026-11-10T15:02:52.514Z",
+    "results": [
+      {
+        "url": "https://github.com/antchoi/memento"
+      },
+      {
+        "url": "https://docs.salaam.sh/durable-tasks/"
+      },
+      {
+        "url": "https://conchagent.com/decisions/0038-durable-verified-tasks/"
+      },
+      {
+        "url": "https://github.com/UcelX/everrun-agent"
+      },
+      {
+        "url": "https://kazma.ai/docs/task-ledger/"
+      },
+      {
+        "url": "https://www.model123.ai/en/docs/coding-agent-mechanics/task-list-persistence"
+      },
+      {
+        "url": "https://www.klaweht.com/2026-07-13-the-work-ledger/"
+      },
+      {
+        "url": "https://github.com/AnupDangi/Claude-Master-Setup"
+      }
+    ]
+  }
+]

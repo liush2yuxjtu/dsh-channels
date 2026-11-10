@@ -61,8 +61,7 @@ it('proves mention-only missions with real DeepSeek, native DSH, two browser ide
     scaffold = await launchWebScaffold({ developerTools: false, profile: { hmr: false, packages: [{ dir: root, enabled: true }] }, extraOverlayPath: overlay });
     await writeFile(join(output, 'preview-auth-url.txt'), scaffold.authenticatedUrl, { mode: 0o600 });
     await writeFile(join(scaffold.workspaceCwd, 'dimensions.json'), JSON.stringify({ nonce, width: 1440, sidebar: 240, feed: 420,
-      checklist: ['Review layout', 'Check channel trigger', 'Verify persistence'],
-      instruction: 'Use todo_write twice. First set Review layout in_progress and both remaining tasks pending. Then mark Review layout completed and leave the other two pending.' }));
+      checklist: ['Review layout', 'Check channel trigger', 'Verify persistence'] }));
     scaffold.ctx.on('agent/created', ({ agent }) => agent.ctx.tools.restrict({ allow: ['read', 'todo_write'] }));
     await scaffold.ctx.agentDefaultModel.saveSelection({ provider: 'deepseek-official', model });
     browser = await chromium.launch({ executablePath: process.env.DSH_CHROMIUM_PATH || '/usr/bin/chromium', headless: true,
@@ -107,7 +106,7 @@ it('proves mention-only missions with real DeepSeek, native DSH, two browser ide
     await shot(page, '02-human-channel.png');
 
     await step('A mention creates a real mission with native read and TODO tools');
-    const firstPrompt = '@deepseek Review the release layout in dimensions.json. Read the file, compute the remaining width, and use todo_write to follow its three-step checklist. Report the release codename from channel history and the file nonce in Markdown. Keep the reply under 70 words.';
+    const firstPrompt = '@deepseek Review the release layout in dimensions.json. Read the file and compute the remaining width. Use these exact three TODO labels: Review layout, Check channel trigger, Verify persistence. Call todo_write first with Review layout in_progress and both others pending; then call it again with Review layout completed and both others pending. Preserve these labels and do not add tasks. Report the release codename from channel history and the file nonce in Markdown. Keep the reply under 70 words.';
     await say(page, firstPrompt);
     let first;
     await expect.poll(async () => {
@@ -123,6 +122,7 @@ it('proves mention-only missions with real DeepSeek, native DSH, two browser ide
     assert.ok(textOf(replyOf(events)).includes(codename));
     assert.ok(observer.requests.every(request => !request.includes(otherChannelFact)), 'Actual outgoing API bodies must exclude the other channel');
     assert.equal(first.todos.filter(value => value.status === 'completed').length, 1);
+    assert.deepEqual(first.todos.map(value => value.content), ['Review layout', 'Check channel trigger', 'Verify persistence']);
     await expect(page.getByTestId('thread-composer')).toBeVisible();
     assert.equal(await page.locator('[data-composer-input][contenteditable="true"]').count(), 0, 'No bypassing native composer may remain');
     await expect(page.getByTestId('mission-card').first()).toContainText('1/3');

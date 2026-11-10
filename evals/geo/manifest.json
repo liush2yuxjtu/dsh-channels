@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-10",
+  "files": {
+    "scripts/geo-eval.mjs": "d0b8a365a70aba9c92f870fbde67706824e4ff72a7524b4dc08af7f9a96a67eb",
+    "scripts/geo-compare.mjs": "682fcd462d96b69a572ef06bf131331fda10ae6211483c477810a1bb856e9ec6",
+    "scripts/geo-retrieval.mjs": "a7f543937793d761ad747cb84fb6700fdd24aa1994216c5d58643531d58d2d6f",
+    "evals/geo/benchmark.v1.json": "093d8dd1d10174f088337accd29e037205feeb6ffb0ad46d120cff8e99f2d065",
+    "evals/geo/competitive.v2.json": "4459216038e3545d51040299fc55047f627624f50d2b446ef9af19a0a1b2ad17",
+    "evals/geo/competitors.json": "37e225bf5c9b1abab32c27a65d7a7b146d5faea70d8d5c8c18c5a425ac1c73ec"
+  }
+}

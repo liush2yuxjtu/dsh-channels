@@ -1,0 +1,284 @@
+{
+  "measuredAt": "2026-11-10T15:03:03.663Z",
+  "observationSha256": "e5b2738c65a122494434d76d916fc009b9cad52ccfc29bbb3a52a083f99797e3",
+  "scope": "Observed retrieval only; result position is provider order, not a search-engine rank or recommendation. Missing model answers mean recommendation and citation metrics are unmeasured.",
+  "recommendationRate": null,
+  "supportedCitationRate": null,
+  "metrics": [
+    {
+      "id": "dsh-channels",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "dsh-chaos",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "dsh-agent-team",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "dsh-chatroom",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "nanmicoder-agent-teams",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "threads-space",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "agentchattr",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "devin-slack",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "openhands-slack",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "claude-tag",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "slack-code",
+      "samples": 4,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "h-human-note",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-budget-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-credential",
+          "resultPosition": null
+        },
+        {
+          "promptId": "h-progress",
+          "resultPosition": null
+        }
+      ]
+    }
+  ]
+}

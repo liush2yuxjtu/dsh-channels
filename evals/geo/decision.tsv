@@ -1,0 +1,5 @@
+attempt	mechanism	training_coverage	delta	decision
+0	baseline	0.875	0	freeze snapshot
+1	self-contained bilingual install answer	1	0.125	keep
+2	trigger-session-TODO explanation	1	0	retain for readers; no measured gain
+3	fit and limits table	1	0	retain for readers; no measured gain; stop local diagnostic

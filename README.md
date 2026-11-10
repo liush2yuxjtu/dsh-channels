@@ -94,6 +94,8 @@ This alpha targets trusted teammates who already have access to a trusted DSH Ho
 
 ## Get help
 
+Compare [DSH collaboration plugins and adjacent tools](docs/geo/competitors.md) by user task, trigger policy, persistence, and Host boundary. See the [task guide](docs/geo/task-guide.md) for concise, source-linked answers, and the [GEO evaluation protocol](evals/geo/README.md) for reproducible measurements and their limits.
+
 For a reproducible problem, [report it in GitHub Issues](https://github.com/liush2yuxjtu/dsh-channels/issues). Include your DSH version, Node.js version, expected behavior, and reproduction steps. Keep API keys, owner login URLs, member tokens, and private channel messages out of reports.
 
 See [the full verification report](docs/verification.md) for tested behavior and limits. For related projects, browse [this author's DSH plugins](https://github.com/search?q=user%3Aliush2yuxjtu+topic%3Adsh-plugins&type=repositories) or the [DSH plugin topic](https://github.com/topics/dsh-plugin).

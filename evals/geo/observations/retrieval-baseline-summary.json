@@ -1,0 +1,460 @@
+{
+  "measuredAt": "2026-11-10T14:58:33.584Z",
+  "observationSha256": "2fc45efe60de86774376f8772dcbae78585a1322a06bbc19b8b97bdd948faa4b",
+  "scope": "Observed retrieval only; result position is provider order, not a search-engine rank or recommendation. Missing model answers mean recommendation and citation metrics are unmeasured.",
+  "recommendationRate": null,
+  "supportedCitationRate": null,
+  "metrics": [
+    {
+      "id": "dsh-channels",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "dsh-chaos",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "dsh-agent-team",
+      "samples": 8,
+      "hits": 1,
+      "exposure": 0.125,
+      "meanReciprocalResultPosition": 0.0625,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": 2
+        }
+      ]
+    },
+    {
+      "id": "dsh-chatroom",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "nanmicoder-agent-teams",
+      "samples": 8,
+      "hits": 1,
+      "exposure": 0.125,
+      "meanReciprocalResultPosition": 0.03125,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": 4
+        }
+      ]
+    },
+    {
+      "id": "threads-space",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "agentchattr",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "devin-slack",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "openhands-slack",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "claude-tag",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    },
+    {
+      "id": "slack-code",
+      "samples": 8,
+      "hits": 0,
+      "exposure": 0,
+      "meanReciprocalResultPosition": 0,
+      "observations": [
+        {
+          "promptId": "t-install",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-mention",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-session",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-memory",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-retry",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-boundary",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-slack",
+          "resultPosition": null
+        },
+        {
+          "promptId": "t-zh-install",
+          "resultPosition": null
+        }
+      ]
+    }
+  ]
+}

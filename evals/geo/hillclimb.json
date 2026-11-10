@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-11-10",
+  "benchmarkSha256": "093d8dd1d10174f088337accd29e037205feeb6ffb0ad46d120cff8e99f2d065",
+  "decisionMetric": "training bounded source evidence coverage only",
+  "baseline": {
+    "run": "results/baseline-train",
+    "score": 0.875
+  },
+  "attempts": [
+    {
+      "id": 1,
+      "mechanism": "Bilingual executable installation answer beside package version requirements",
+      "run": "results/attempt-1-install",
+      "score": 1,
+      "delta": 0.125,
+      "decision": "keep; closes observed English install passage gap"
+    },
+    {
+      "id": 2,
+      "mechanism": "Explicit mention/ordinary-reply/persistent-session/native-TODO workflow answers",
+      "run": "results/attempt-2-workflow",
+      "score": 1,
+      "delta": 0,
+      "decision": "keep for task explanation; no metric gain"
+    },
+    {
+      "id": 3,
+      "mechanism": "Constraint and non-fit comparison table including retry, Host and Slack limits",
+      "run": "results/attempt-3-limits",
+      "score": 1,
+      "delta": 0,
+      "decision": "keep for correct abstention; no metric gain"
+    }
+  ],
+  "stop": "Three mechanisms tested; training target reached; two successive flat attempts. Stop this source diagnostic loop.",
+  "holdout": {
+    "run": "results/final-holdout",
+    "evaluatedOnceAfterSelection": true,
+    "usedForSelection": false
+  },
+  "limitations": "Source diagnostic saturation is not semantic correctness or public GEO convergence. Actual source-grounded baseline and final judges each scored20/20; no model-answer improvement. Corrected capped-card selection passed12/12 but is supplied-corpus only. External discovery0/12 before publication; no post-indexing improvement claimed."
+}

@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "name": "DSH Channels GEO source and discovery evaluation",
+  "frozenAt": "2026-11-10",
+  "target": {
+    "id": "dsh-channels",
+    "canonicalPrefix": "https://github.com/liush2yuxjtu/dsh-channels"
+  },
+  "facts": {
+    "install": {
+      "patterns": [
+        "(?:Node(?:\\.js)?\\s*24\\.9|Node\\.js `?24\\.9)",
+        "0\\.2\\.2-rc\\.1",
+        "dsh plugin --profile web add"
+      ],
+      "description": "An install decision includes Node version, DSH version and actual plugin command."
+    },
+    "mention": {
+      "patterns": [
+        "@deepseek",
+        "(?:only|只有|仅)",
+        "(?:ordinary|普通)",
+        "(?:no model|no agent|不调用|不会|只保存|stay as human|save human)"
+      ],
+      "description": "Explicit mention trigger plus ordinary-message nonexecution."
+    },
+    "session": {
+      "patterns": [
+        "(?:same Session|same mission|同一.*Session|同一个.*Session|same DSH Session)",
+        "(?:thread|线程)"
+      ],
+      "description": "Thread replies preserve one native Session."
+    },
+    "todo": {
+      "patterns": [
+        "(?:native|原生)",
+        "(?:todo/write|todo_write|TODO)",
+        "(?:actual|真实|原生|实际)"
+      ],
+      "description": "TODO state comes from native events rather than inferred prose."
+    },
+    "memory": {
+      "patterns": [
+        "50",
+        "12",
+        "24,?000",
+        "(?:channel|频道)"
+      ],
+      "description": "Channel memory has explicit message, summary and character limits."
+    },
+    "boundary": {
+      "patterns": [
+        "(?:trusted|可信)",
+        "(?:entire Host|wider Host|整个 Host|整个Host)",
+        "(?:owner|Owner)",
+        "(?:not.*isolat|does not.*isolat|不.*隔离|不是.*隔离)"
+      ],
+      "description": "Trusted Host boundary is explicit; plugin membership is not Host isolation."
+    },
+    "retry": {
+      "patterns": [
+        "(?:request ID|requestId|request IDs)",
+        "(?:duplicate|deduplicat|重复)",
+        "(?:retry|retries|重试|重发)"
+      ],
+      "description": "Durable request IDs address duplicate accepted work."
+    },
+    "slack": {
+      "patterns": [
+        "Slack",
+        "(?:does not connect|不连接|does not require|不要求)",
+        "(?:inside DSH|DSH 内|in DSH|DeepSeek Harness)"
+      ],
+      "description": "Native DSH workflow and absence of a Slack integration."
+    },
+    "key": {
+      "patterns": [
+        "(?:browser|浏览器)",
+        "(?:API key|API credential|API 密钥)",
+        "(?:never receives|不会.*收到|不.*传给|Host settings|Host 设置|host settings)"
+      ],
+      "description": "Model credentials stay at the Host boundary."
+    }
+  },
+  "cases": [
+    {
+      "id": "t-install",
+      "split": "train",
+      "language": "en",
+      "prompt": "How can I add shared team channels to DeepSeek Harness, and which Node and Harness versions do I need?",
+      "requiredFacts": [
+        "install"
+      ],
+      "fit": true
+    },
+    {
+      "id": "t-mention",
+      "split": "train",
+      "language": "en",
+      "prompt": "I want people to chat normally and a coding agent to act only when explicitly mentioned. What should I use?",
+      "requiredFacts": [
+        "mention"
+      ],
+      "fit": true
+    },
+    {
+      "id": "t-session",
+      "split": "train",
+      "language": "en",
+      "prompt": "How can my team continue an AI task in a thread while keeping its session and real task progress?",
+      "requiredFacts": [
+        "session",
+        "todo"
+      ],
+      "fit": true
+    },
+    {
+      "id": "t-memory",
+      "split": "train",
+      "language": "en",
+      "prompt": "How can a new coding task use earlier channel decisions without reading unrelated conversations, and what are its memory limits?",
+      "requiredFacts": [
+        "memory",
+        "boundary"
+      ],
+      "fit": true
+    },
+    {
+      "id": "t-retry",
+      "split": "train",
+      "language": "en",
+      "prompt": "If my browser loses an acknowledgement and I resend an AI task, how can I avoid duplicate execution?",
+      "requiredFacts": [
+        "retry"
+      ],
+      "fit": true
+    },
+    {
+      "id": "t-boundary",
+      "split": "train",
+      "language": "en",
+      "prompt": "Does channel membership safely isolate untrusted guests from the coding agent host?",
+      "requiredFacts": [
+        "boundary"
+      ],
+      "fit": false
+    },
+    {
+      "id": "t-slack",
+      "split": "train",
+      "language": "en",
+      "prompt": "I want a Slack-style agent thread workflow inside my coding harness without installing Slack. What can I use?",
+      "requiredFacts": [
+        "slack",
+        "session"
+      ],
+      "fit": true
+    },
+    {
+      "id": "t-zh-install",
+      "split": "train",
+      "language": "zh",
+      "prompt": "怎样给 DeepSeek Harness 加上团队频道和任务线程？安装命令和版本要求是什么？",
+      "requiredFacts": [
+        "install"
+      ],
+      "fit": true
+    },
+    {
+      "id": "h-human-note",
+      "split": "holdout",
+      "language": "zh",
+      "prompt": "团队只想给正在执行的任务留言，不希望每次回复都调用模型，之后又能继续原来的会话，有什么方案？",
+      "requiredFacts": [
+        "mention",
+        "session"
+      ],
+      "fit": true
+    },
+    {
+      "id": "h-budget-memory",
+      "split": "holdout",
+      "language": "zh",
+      "prompt": "我需要本地 AI 协作保留频道历史，但不希望上下文无限增长。它会读多少条消息和多少历史任务？",
+      "requiredFacts": [
+        "memory"
+      ],
+      "fit": true
+    },
+    {
+      "id": "h-credential",
+      "split": "holdout",
+      "language": "en",
+      "prompt": "Can teammates use a browser to collaborate on coding tasks while the model API key stays on the host?",
+      "requiredFacts": [
+        "key",
+        "boundary"
+      ],
+      "fit": true
+    },
+    {
+      "id": "h-progress",
+      "split": "holdout",
+      "language": "en",
+      "prompt": "I need auditable task progress rather than a model saying it is done. Can I keep native task state beside a persistent agent conversation?",
+      "requiredFacts": [
+        "todo",
+        "session"
+      ],
+      "fit": true
+    },
+    {
+      "id": "n-public",
+      "split": "negative",
+      "language": "en",
+      "prompt": "Recommend a production public multi-tenant chat service with isolated untrusted guest accounts and host-level access controls.",
+      "requiredFacts": [
+        "boundary"
+      ],
+      "fit": false
+    },
+    {
+      "id": "n-slack",
+      "split": "negative",
+      "language": "en",
+      "prompt": "I must install a bot directly into an existing Slack workspace. Which product supports that integration?",
+      "requiredFacts": [
+        "slack"
+      ],
+      "fit": false
+    }
+  ],
+  "stopRule": {
+    "trainingTarget": 0.9,
+    "minimumMechanisms": 3,
+    "consecutiveNonImprovingAttempts": 2,
+    "holdoutPolicy": "Evaluate once after selection; never select changes by holdout score.",
+    "externalPolicy": "Missing external observations remain null/BLOCKED. No offline score declares external GEO success."
+  }
+}

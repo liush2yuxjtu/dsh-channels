@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "name": "Balanced closed-corpus product selection correction",
+  "frozenAt": "2026-11-10",
+  "purpose": "Correct target-answerability blind spot; not public GEO or measured improvement",
+  "sourcePolicy": "Equal 1500-character cap per product, fixed neutral cards. Cards are documented-claim summaries with unequal source detail possible; no runtime or superiority inference. Eligibility is a curated reference judgment, not ground-truth exhaustiveness.",
+  "maxCharsPerProduct": 1500,
+  "products": [
+    {
+      "id": "dsh-channels",
+      "name": "DSH Channels",
+      "url": "https://github.com/liush2yuxjtu/dsh-channels",
+      "checkedAt": "2026-11-10",
+      "provenance": "First-party README and package metadata; documented claims, not independent runtime verification",
+      "card": "External plugin for DeepSeek Harness with shared human channels and mission threads. Only an explicit @deepseek mention starts an Agent task; ordinary messages and thread replies save human notes without model calls. Mentioning again in a thread continues its native DSH Session. Actual native todo/write events expose progress. Context uses up to 50 current-channel messages and 12 saved mission summaries within 24,000 characters. Trusted Host only: plugin channel membership does not isolate the wider Host from owner credentials. Model API keys stay on the Host. No integration into an existing Slack workspace. This is not a persistent autonomous multi-agent team or a verified public multi-tenant service."
+    },
+    {
+      "id": "dsh-chaos",
+      "name": "dsh-chaos",
+      "url": "https://github.com/hanxuanliang/dsh-chaos",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "DSH native Agents, Channels, Threads, Tasks and transactional local ledger; documented recovery after refresh, plugin restart and Session replacement. Limits and unknowns: README targets DSH 0.1.0-rc.7. One local Web User, no remote multi-user authentication; fixed danger-full-access."
+    },
+    {
+      "id": "dsh-agent-team",
+      "name": "Contexera dsh-agent-team",
+      "url": "https://github.com/Contexera/dsh-agent-team",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Persistent named Members with memory, notes and skills; Project and Task ownership; independent verification; Inbox and append-only ledger. Limits and unknowns: README pins plugin 0.2.7 to DSH 0.2.2-rc.1. One Human; event-driven wakeups, no timer when completely quiet; danger-full-access."
+    },
+    {
+      "id": "dsh-chatroom",
+      "name": "DeepSeek-harness-chatroom",
+      "url": "https://github.com/invclaw/DeepSeek-harness-chatroom",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Multi-user Group/Solo/DM, accounts and OIDC; native tools, permissions and trajectory; persistent branch Sessions; explicit @AI and optional decision-model auto replies. Limits and unknowns: Not strict single-literal mention-only. Historical screenshots are not a current-version guarantee; authorization and recovery claims not independently tested."
+    },
+    {
+      "id": "nanmicoder-agent-teams",
+      "name": "NanmiCoder dsh-agent-teams",
+      "url": "https://github.com/NanmiCoder/dsh-agent-teams",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Current Session as captain; durable sub-agents, dependency-aware tasks, scheduler, direct mailbox and live Web panel. Limits and unknowns: One captain and active team; single-process file state; tool policies are not an OS sandbox. Recommended DSH 0.2.1-rc.2; 0.2.2-rc.1 preview."
+    },
+    {
+      "id": "threads-space",
+      "name": "Threads",
+      "url": "https://www.threads.space/",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "MIT self-hosted people and agents chat, channels/DMs/threads, bot identities, MCP/REST/WebSocket/webhooks. Limits and unknowns: Cloudflare deployment and externally operated agents; website demo uses sample conversations; tool progress and stop depend on integration. Hosted self-service signup paused."
+    },
+    {
+      "id": "agentchattr",
+      "name": "agentchattr",
+      "url": "https://github.com/bcurts/agentchattr",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Local coding-agent mention routing, agent-to-agent communication, loop guard, restart-persistent channels, Jobs with status and full thread context. Limits and unknowns: Local wrappers and terminals required. Roles are global, not per-channel. README has inconsistent 10/11 MCP tool counts; exact count excluded."
+    },
+    {
+      "id": "devin-slack",
+      "name": "Devin Slack",
+      "url": "https://docs.devin.ai/integrations/slack",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Mentions start Sessions, thread sync, code channels, mute/aside, message shortcuts and Slack-activity automations. Limits and unknowns: Each user links an account; multiple triggers beyond mentions. Sidebar requires paid Slack; ordinary mentions support free Slack. Devin plan/charges not evaluated."
+    },
+    {
+      "id": "openhands-slack",
+      "name": "OpenHands Slack",
+      "url": "https://www.openhands.dev/blog/openhands-meets-slack-ai-powered-development-in-your-workspace",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Official announcement documents @openhands development requests, repository selection, threaded follow-up and shared team participation. Limits and unknowns: Source is a 2025-06-24 beta announcement; current availability and plans untested. Does not establish strict mention-only behavior or durable channel memory."
+    },
+    {
+      "id": "claude-tag",
+      "name": "Claude Tag",
+      "url": "https://claude.com/product/tag",
+      "checkedAt": "2026-11-10",
+      "provenance": "Neutral research summary of first-party documentation; not fetched full page or independent runtime verification",
+      "card": "Shared Slack agent identity, thread context, channel-scoped memory, admin-configured channel access, standing instructions and long-running tasks. Limits and unknowns: Team/Enterprise; proactive work can occur without a mention. Legacy Claude Code Slack is a separate earlier experience with plan/workspace restrictions; not an interchangeable product alias."
+    }
+  ],
+  "cases": [
+    {
+      "id": "c-mention-native",
+      "prompt": "I use DeepSeek Harness and need a shared human channel where the coding agent acts only on an explicit mention, ordinary replies never invoke it, and task threads continue the native session. Which documented product fits?",
+      "eligible": [
+        "dsh-channels"
+      ]
+    },
+    {
+      "id": "c-standing-team",
+      "prompt": "I need a persistent autonomous coding-agent team inside DeepSeek Harness: agents or durable sub-agents retain identities, accept assigned work, and hand tasks or messages between agents. Which documented products fit?",
+      "eligible": [
+        "dsh-agent-team",
+        "nanmicoder-agent-teams",
+        "dsh-chaos"
+      ]
+    },
+    {
+      "id": "c-existing-slack",
+      "prompt": "My team already uses Slack. Which documented integrations let us hand coding or development work to an agent inside that existing Slack workspace and follow up in a thread? State beta, availability, or plan unknowns instead of assuming current production availability.",
+      "eligible": [
+        "devin-slack",
+        "openhands-slack",
+        "claude-tag"
+      ]
+    },
+    {
+      "id": "c-selfhost-identities",
+      "prompt": "I want to self-host or locally run a shared chat space for people and multiple independent named AI-agent identities, with channels or group conversations. Which documented products fit? I am not asking for a single-agent mission thread or only an autonomous task scheduler.",
+      "eligible": [
+        "threads-space",
+        "agentchattr",
+        "dsh-chatroom"
+      ]
+    },
+    {
+      "id": "c-public-security",
+      "prompt": "Recommend a production-ready public multi-tenant AI team chat service whose supplied evidence proves secure SSO, independently verified untrusted tenant isolation, and host-level access controls. If no supplied source proves all these requirements, abstain.",
+      "eligible": []
+    },
+    {
+      "id": "c-host-isolation",
+      "prompt": "Which product has supplied evidence proving that accepting only a channel invitation safely isolates an untrusted guest from the entire coding-agent Host, including owner APIs and all other sessions? If that guarantee is not established, abstain.",
+      "eligible": []
+    }
+  ]
+}
