@@ -1,18 +1,29 @@
-# DSH Channels
+# DSH Channels for DeepSeek Harness
 
-[简体中文](README.zh-CN.md)
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-Chat with humans. Mention `@deepseek` to start a mission in DeepSeek Harness.
+DSH Channels is an open source **DeepSeek Harness (DSH) plugin** for team chat, persistent AI mission threads, and channel memory. Chat with people in a shared channel. Mention `@deepseek` to start an agent task or continue its existing DSH Session.
 
-DSH Channels is an independent open source DSH plugin. A channel holds human messages. Each mission has its own native DSH Session, assistant history, tools, summary, and TODO progress. A reply without a mention saves a human note. A reply with a mention continues the same mission.
+**Mention to Mission:** ordinary messages stay as human chat. Each explicit mention creates or continues a mission with native assistant messages, tools, summaries, and TODO progress.
 
-![Real DSH Channels mission with native TODOs](docs/media/03-real-mission-todo.png)
+Working alpha for trusted DSH workspaces. Requires Node.js 24.9 or later and DSH `0.2.2-rc.1`. [Read the Host access boundary](#memory-and-access) before inviting teammates.
 
-[See the complete flow of real screens](docs/flow.md) · [Read the acceptance evidence](docs/verification.md)
+[Install](#install) · [Use](#use) · [Trigger rules](#trigger-rules) · [Real screen flow](docs/flow.md) · [Verification evidence](docs/verification.md) · [FAQ](#faq)
+
+![DeepSeek Harness channel chat beside a real AI mission with native TODO progress](docs/media/03-real-mission-todo.png)
+
+## Why use DSH Channels
+
+- Keep team decisions in a shared channel without running an agent for every message.
+- Turn an explicit `@deepseek` request into a separate mission thread and native DSH Session.
+- Reopen a mission with its assistant history, tool output, summary, and actual TODO progress.
+- Give a new mission relevant channel history and earlier mission summaries, within a defined memory limit.
+
+[Walk through the real screens](docs/flow.md) from human chat to a mission, a contextual reply, and memory across Sessions. The screenshots come from real Chromium and the official DeepSeek API.
 
 ## Install
 
-Requires Node.js 24.9 or later and DSH `0.2.2-rc.1`. The tested upstream revision is `fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159`.
+The tested DeepSeek Harness revision is `fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159`. Install the package into the DSH Web profile:
 
 ```sh
 git clone https://github.com/liush2yuxjtu/dsh-channels.git
@@ -58,6 +69,34 @@ The server derives authors from member tokens and checks channel membership on e
 **Use this release with trusted teammates on a trusted Host.** Plugin member access restricts plugin data. DSH owner browser credentials still grant access to the entire Host and its other Session APIs. A channel invitation does not turn an owner authentication URL into an isolated guest login. Do not share that URL with untrusted users.
 
 Identity tokens and drafts remain in browser local storage. Host messages, invitations, mission bindings, and receipts remain in the DSH storage domain. Deleting browser data loses that browser's member token. There is no account recovery UI in this release.
+
+## FAQ
+
+### Does a normal channel or thread reply run DeepSeek?
+
+Ordinary replies save human messages. Only an explicit valid `@deepseek` mention starts or continues agent execution. Code examples, quoted lines, URLs, and escaped mentions do not trigger it. See the [trigger rules](#trigger-rules).
+
+### Does each mission have its own DSH Session?
+
+Each root mention creates a separate mission and native Session. Mentions inside that mission continue the same Session. The sidebar keeps its title, actual reply summary, and TODO count available between visits.
+
+### What does channel memory include?
+
+The current mission keeps its Session history. New execution also receives the same channel's recent messages and saved mission summaries. It does not scan every Session on the Host. See the [memory limits and access model](#memory-and-access).
+
+### Is DSH Channels a Slack bot?
+
+DSH Channels brings a Slack-style channel and thread workflow into DeepSeek Harness. It runs inside DSH and does not connect to Slack or require a Slack account.
+
+### Can I use this as a public chat service?
+
+This alpha targets trusted teammates who already have access to a trusted DSH Host. Plugin membership limits plugin data. An owner login still controls the wider Host, so it is not an isolated guest account.
+
+## Get help
+
+For a reproducible problem, [report it in GitHub Issues](https://github.com/liush2yuxjtu/dsh-channels/issues). Include your DSH version, Node.js version, expected behavior, and reproduction steps. Keep API keys, owner login URLs, member tokens, and private channel messages out of reports.
+
+See [the full verification report](docs/verification.md) for tested behavior and limits. For related projects, browse [this author's DSH plugins](https://github.com/search?q=user%3Aliush2yuxjtu+topic%3Adsh-plugins&type=repositories) or the [DSH plugin topic](https://github.com/topics/dsh-plugin).
 
 ## Verify
 

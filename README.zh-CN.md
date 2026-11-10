@@ -1,10 +1,23 @@
-# DSH Channels
+# DSH Channels 频道协作与任务线程插件
 
-[English](README.md)
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-在 DeepSeek Harness 里与团队正常聊天。需要 Agent 执行任务时，提及 `@deepseek`。
+DSH Channels 是开源的 **DeepSeek Harness（DSH）插件**，提供团队频道聊天、独立 AI 任务线程和频道记忆。团队成员正常聊天，需要 Agent 执行时才提及 `@deepseek`。
 
-频道保存人的消息。每个任务有独立的原生 DSH Session。侧栏展示标题、真实回复摘要和原生 TODO 进度。普通线程回复只保存为团队留言。线程中的提及继续同一个 Session。
+**Mention to Mission** 将一次明确提及转为任务。每个任务使用独立的原生 DSH Session，保留 Assistant 消息、工具结果、摘要和真实 TODO 进度。普通线程回复只保存为团队留言，再次提及会继续同一个任务。
+
+当前为可信 DSH 工作区内使用的 Working Alpha。需要 Node.js 24.9 或更新版本，以及 DSH `0.2.2-rc.1`。邀请成员前先阅读[上下文与权限](#上下文与权限)。
+
+[安装](#安装) · [使用](#使用) · [常见问题](#常见问题) · [完整实机流程，英文界面](docs/flow.md) · [验收证据](docs/verification.md)
+
+## 适用场景
+
+- 将团队决策保存在频道里，普通消息不调用 Agent。
+- 用一次 `@deepseek` 明确请求创建任务线程和原生 DSH Session。
+- 重新打开任务时，查看既有对话、工具输出、摘要和实际 TODO 进度。
+- 让新任务读取本频道的近期消息和已有任务摘要，并限制记忆范围。
+
+[实机流程](docs/flow.md)展示频道聊天、提及创建任务、线程续聊和跨 Session 记忆。素材来自真实 Chromium 和官方 DeepSeek API，界面及示例对话使用英文。
 
 ## 安装
 
@@ -40,6 +53,34 @@ dsh web
 **此版本用于可信 Host 内的可信团队。** 插件成员权限只约束插件数据。DSH owner 登录凭据仍能访问整个 Host。不要向不可信的人分享 owner 登录链接。频道邀请不等于独立的 Host guest 登录。
 
 成员凭据与草稿保存在浏览器 local storage。频道数据、任务绑定和投递记录保存在 DSH storage domain。清除浏览器数据会丢失该浏览器的成员凭据。此版本没有账号恢复界面。
+
+## 常见问题
+
+### 普通频道消息或线程回复会运行 DeepSeek 吗
+
+普通回复只保存为人类消息。只有有效的显式 `@deepseek` 提及才会执行。代码示例、引用行、URL 和转义提及不会触发。空任务会被拒绝，并保留草稿。
+
+### 每个任务都有独立 Session 吗
+
+频道中的新提及创建独立任务和原生 Session。该任务线程内的提及继续同一个 Session。侧栏保留标题、真实摘要和 TODO 计数。
+
+### 频道记忆包含什么
+
+当前任务保留其 Session 历史。执行时也会获得本频道近期消息和已有任务摘要。插件不会扫描 Host 中的全部 Session。具体范围见[上下文与权限](#上下文与权限)。
+
+### 这是 Slack Bot 吗
+
+DSH Channels 将类似 Slack 的频道与线程工作流放入 DeepSeek Harness。它在 DSH 内运行，不连接 Slack，也不要求 Slack 账号。
+
+### 能用来搭建公开聊天服务吗
+
+此 Alpha 面向已获得可信 DSH Host 访问权限的团队。插件成员权限约束插件数据。Owner 登录仍可控制整个 Host，不是独立的 guest 账号。
+
+## 获取帮助
+
+遇到可复现的问题，可在 [GitHub Issues](https://github.com/liush2yuxjtu/dsh-channels/issues) 提供 DSH 版本、Node.js 版本、预期行为和复现步骤。不要提交 API key、Owner 登录链接、成员凭据或私有频道消息。
+
+相关项目可从[本作者的 DSH 插件](https://github.com/search?q=user%3Aliush2yuxjtu+topic%3Adsh-plugins&type=repositories)或 [DSH plugin Topic](https://github.com/topics/dsh-plugin)查找。完整测试范围见[验收报告](docs/verification.md)。
 
 ## 验证
 
