@@ -47,7 +47,7 @@ The sidebar shows mission titles, actual assistant summaries, and progress from 
 | Inline code, fenced code, quoted lines, email, or `@deepseekish` | No trigger from those occurrences |
 | An empty mention | Reject it and keep the draft |
 
-Code and quoted material remain available when a valid mention appears outside them. Only the valid mention token is removed from the task.
+When a valid mention appears outside code or a quotation, the parser keeps the code and quoted material in the task. It removes valid mention tokens and trims surrounding whitespace and punctuation.
 
 ## Memory and access
 
@@ -69,7 +69,7 @@ npm run verify:live
 node scripts/install-hooks.mjs
 ```
 
-The live test uses the official DeepSeek API and real Chromium. It compares actual API response IDs, token usage, text, and tool-call IDs with durable DSH events. It checks silent human messages, independent missions, contextual replies, same-channel memory, server access checks, browser reload, mobile navigation, and Native DSH restoration.
+The live test uses the official DeepSeek API and real Chromium. It records API response IDs and token usage. It matches reply text, tool-call IDs and arguments, and TODO updates against persisted DSH events. It checks silent human messages, independent missions, contextual replies, same-channel memory, server access checks, browser reload, mobile navigation, and Native DSH restoration.
 
 `node scripts/cold-restart.mjs` tests two real DSH CLI processes against the same durable storage. The pre-commit hook exports the exact staged tree and runs fresh checks. Missing runtime or credentials fails the commit. Runtime authentication URLs, credentials, and private data stay out of Git.
 

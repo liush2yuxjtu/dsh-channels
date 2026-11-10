@@ -51,7 +51,7 @@ npm run verify:live
 node scripts/install-hooks.mjs
 ```
 
-最终验收使用真实 Chromium、真实 DeepSeek API 和真实 DSH Session。脚本将 API 响应 ID、实际文本与工具调用和持久化事件核对。冷重启脚本会启动两个独立的真实 DSH CLI 进程。
+最终验收使用真实 Chromium、真实 DeepSeek API 和真实 DSH Session。脚本记录 API 响应 ID 和 token 用量，并逐项核对回复文本、工具调用 ID、参数和 TODO 更新是否与持久化的 DSH 事件一致。冷重启脚本会启动两个独立的真实 DSH CLI 进程。
 
 每次提交前，Git hook 会导出 staged tree 并重新运行真实 API E2E。缺少凭据或验收失败会阻止提交。完整证据见 [verification.md](docs/verification.md)。
 
