@@ -8,17 +8,24 @@ DSH Channels 是开源的 **DeepSeek Harness（DSH）插件**，提供团队频�
 
 当前为可信 DSH 工作区内使用的 Working Alpha。需要 Node.js 24.9 或更新版本，以及 DSH `0.2.2-rc.1`。邀请成员前先阅读[上下文与权限](#上下文与权限)。
 
-[安装](#安装) · [使用](#使用) · [常见问题](#常见问题) · [完整实机流程，英文界面](docs/flow.md) · [验收证据](docs/verification.md)
+[安装](#安装) · [使用](#使用) · [常见问题](#常见问题) · [完整实机流程](docs/flow.md) · [验收证据](docs/verification.md)
 
-![DSH Channels 同事协作线程与真实 TODO 进度](docs/media/teammate-desktop.png)
+![DSH Channels 中文实机界面与真实 TODO 进度](docs/media/teammate-zh.png)
 
 ## 同事协作线程
 
-紫色导航保留频道与任务列表。Mission Thread 显示真实执行状态、原生 TODO 进度、DSH Session 关联和可展开的助手摘要。完整请求可以展开查看，默认任务概览保持紧凑。
+0.1.1 已在运行中的插件实现六项设计：
 
-人类回复带真实作者，放在对应的原生执行记录旁。普通回复不调用模型。只有明确提及 `@deepseek` 才开始或继续执行。频道显示任务的实际状态与最新助手摘要，点击回执可返回同一线程。
+- **紫色导航**：查看频道，并从任务列表重新打开任务。
+- **频道回执**：DeepSeek 显示任务的实际状态和最新摘要，点击进入对应线程。
+- **Mission Thread**：人类回复与 Agent 执行记录在同一线程内协作，并显示真实作者。
+- **任务概览**：显示真实 TODO 进度、执行状态和关联的 DSH Session。空闲状态显示“已就绪”。
+- **折叠详情**：按需展开完整请求、助手摘要和原生工具细节。
+- **手机、暗色与双语界面**：在手机上切换频道与线程，支持中文和英文界面。
 
-Assistant 消息、工具细节与 TODO 继续使用原生 DSH 渲染。桌面、手机导航与暗色模式使用同一份真实数据。参见[设计验收](design-qa.md)与[验收证据](docs/verification.md)。
+普通回复不调用模型。只有明确提及 `@deepseek` 才开始或继续执行。Assistant 消息、工具细节与 TODO 继续使用原生 DSH 渲染。
+
+上图为运行中的中文界面。[手机实机截图](docs/media/teammate-mobile.png) · [暗色实机截图](docs/media/teammate-dark.png) · [完整实机流程](docs/flow.md)。参见[设计验收](design-qa.md)与[验收证据](docs/verification.md)。
 
 ## 适用场景
 
@@ -27,7 +34,7 @@ Assistant 消息、工具细节与 TODO 继续使用原生 DSH 渲染。桌面�
 - 重新打开任务时，查看既有对话、工具输出、摘要和实际 TODO 进度。
 - 让新任务读取本频道的近期消息和已有任务摘要，并限制记忆范围。
 
-[实机流程](docs/flow.md)展示频道聊天、提及创建任务、线程续聊和跨 Session 记忆。素材来自真实 Chromium 和官方 DeepSeek API，界面及示例对话使用英文。
+[实机流程](docs/flow.md)展示频道聊天、提及创建任务、线程续聊和跨 Session 记忆。素材来自真实 Chromium 和官方 DeepSeek API，包含中文、英文、手机及暗色界面。
 
 ## 安装
 

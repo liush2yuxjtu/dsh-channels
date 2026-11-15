@@ -14,11 +14,18 @@ Working alpha for trusted DSH workspaces. Requires Node.js 24.9 or later and DSH
 
 ## Teammate threads
 
-The violet channel sidebar opens a Mission thread beside the team conversation. Each mission shows its real run status, native TODO progress, bound DSH Session, and an expandable assistant summary. The full request stays available without filling the task overview.
+Version 0.1.1 brings six parts of the teammate design into the running plugin:
 
-Human replies appear alongside the native execution history with their actual authors. Ordinary replies stay silent. Only an explicit `@deepseek` starts or continues model work. The channel shows the mission's actual status and latest assistant summary, with a link back to that same thread.
+- **Violet navigation:** browse channels and reopen tasks from the mission list.
+- **Channel receipts:** DeepSeek shows the mission's actual status and latest assistant summary. Open the receipt to return to that thread.
+- **Mission threads:** human replies and native agent execution share the same thread, with the actual authors shown.
+- **Task overview:** see real TODO progress, run status, and the bound DSH Session. Idle displays Ready.
+- **Expandable details:** open the full request, assistant summary, and native tool details when needed.
+- **Phone, dark mode, and language support:** switch between channel and thread on a phone, with English and Chinese interface labels.
 
-The native DSH renderer still owns assistant output, tool details, and TODOs. Desktop, phone navigation, and dark mode use the same live data. See the [design acceptance](design-qa.md) and [verification evidence](docs/verification.md).
+Ordinary replies stay silent. Only an explicit `@deepseek` starts or continues model work. The native DSH renderer owns assistant output, tool details, and TODOs.
+
+The linked screenshots show the running plugin. [Chinese desktop](docs/media/teammate-zh.png) · [Phone](docs/media/teammate-mobile.png) · [Dark mode](docs/media/teammate-dark.png) · [Full screen flow](docs/flow.md). See the [design acceptance](design-qa.md) and [verification evidence](docs/verification.md).
 
 ## Why use DSH Channels
 
