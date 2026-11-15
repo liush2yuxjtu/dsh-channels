@@ -4,7 +4,37 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { randomBytes } from 'node:crypto';
 import { test } from 'node:test';
+import { runInNewContext } from 'node:vm';
 import { Channels, parseMention } from '../src/channels.mjs';
+
+test('thread comments follow durable message order when model turns share a timestamp', async () => {
+  const source = await readFile(new URL('../client.js', import.meta.url), 'utf8');
+  const marker = '\n    return {\n      inject:';
+  assert.equal(source.split(marker).length, 2);
+  const scope = { window: { __ModuleLoader__: { load: ({ factory }) => factory(() => ({})) } } };
+  runInNewContext(source.replace(marker, '\n    globalThis.replyTurn = replyTurn;' + marker), scope);
+  const first = { turn: 1, start: { time: 100 }, end: { time: 150 } };
+  const second = { turn: 2, start: { time: 200 }, end: { time: 250 } };
+  const messages = [
+    { id: 'root', agentRequestId: 'native-first', createdAt: 100 },
+    { id: 'before-followup', agentRequestId: null, createdAt: 200 },
+    { id: 'followup', agentRequestId: 'native-second', createdAt: 200 },
+    { id: 'after-followup', agentRequestId: null, createdAt: 200 },
+  ];
+  const node = (rpcId, turn) => ({ data: { source: { rpcId } }, location: { kind: 'turn', turn } });
+  const chat = { nodes: { values: () => [node('native-second', second), node('native-first', first)] } };
+  assert.equal(scope.replyTurn(messages[1], chat, messages), 1);
+  assert.equal(scope.replyTurn(messages[3], chat, messages), 2);
+  second.end = undefined;
+  assert.equal(scope.replyTurn(messages[3], chat, messages), null);
+  assert.equal(scope.replyTurn(messages[1], chat, messages), 1);
+  const queuedFollowup = { nodes: { values: () => [node('native-first', first)] } };
+  assert.equal(scope.replyTurn(messages[3], queuedFollowup, messages), null);
+  assert.equal(scope.replyTurn(messages[1], queuedFollowup, messages), 1);
+  const laterWindow = { nodes: { values: () => [node('native-second', second)] } };
+  assert.equal(scope.replyTurn(messages[1], laterWindow, messages), undefined);
+  assert.equal(scope.replyTurn(messages[1], { nodes: { values: () => [] } }, messages), null);
+});
 
 async function fixture(t, limits = {}) {
   const directory = await mkdtemp(join(tmpdir(), 'dsh-channels-'));
@@ -97,6 +127,26 @@ test('parallel duplicate submissions produce exactly one message, mission and de
   assert.equal(f.channels.snapshot(f.owner.token).messages.length, 13);
 });
 
+test('snapshots link native prompts to their human authors without changing persisted messages', async t => {
+  const f = await fixture(t);
+  const started = await post(f, '@deepseek Review this task', 'start-request');
+  const delivery = f.channels.pending()[0];
+  await f.channels.bind(delivery.id, 'source-link-session');
+  await f.channels.accepted(delivery.id);
+  const ordinary = await post(f, 'Example `@deepseek` stays a human reply', 'plain-request', { threadId: started.mission.id });
+  const followed = await post(f, '@deepseek Continue this task', 'follow-request', { threadId: started.mission.id });
+  const snapshot = f.channels.snapshot(f.owner.token);
+  assert.equal(snapshot.messages.find(message => message.id === started.message.id).agentRequestId, delivery.requestId);
+  assert.notEqual(delivery.requestId, started.message.requestId);
+  assert.equal(snapshot.messages.find(message => message.id === followed.message.id).agentRequestId, followed.outboxId);
+  assert.equal(snapshot.messages.find(message => message.id === ordinary.message.id).agentRequestId, null);
+  assert.equal(snapshot.messages.find(message => message.id === started.message.id).authorId, f.owner.member.id);
+  const disk = JSON.parse(await readFile(f.path, 'utf8'));
+  assert.ok(disk.messages.every(message => !Object.hasOwn(message, 'agentRequestId')));
+  const restarted = await new Channels(f.adapter).init();
+  assert.deepEqual(restarted.snapshot(f.owner.token).messages, snapshot.messages);
+});
+
 test('save failure rolls back message, mission, outbox and remains recoverable', async t => {
   const f = await fixture(t);
   const before = f.channels.snapshot(f.owner.token);
@@ -158,6 +208,7 @@ test('channel ACL denies guessed channels and missions, and memory never include
   assert.ok(!context.includes('BLUE-KIWI'));
   assert.ok(!context.includes(privateMission.mission.id));
   assert.ok(!JSON.stringify(f.channels.snapshot(teammate.token)).includes('BLUE-KIWI'));
+  assert.ok(!JSON.stringify(f.channels.snapshot(teammate.token)).includes(privateMission.outboxId));
   await assert.rejects(f.channels.retry(teammate.token, privateMission.mission.id), { code: 'FORBIDDEN' });
 });
 

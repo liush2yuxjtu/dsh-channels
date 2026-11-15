@@ -1,0 +1,22 @@
+[
+  {
+    "selector": ".dsh-channels-session-badge",
+    "ratio": 8.440436608692114
+  },
+  {
+    "selector": ".dsh-channels-latest summary",
+    "ratio": 9.029029732461545
+  },
+  {
+    "selector": ".dsh-channels-message-mission",
+    "ratio": 9.221558285610982
+  },
+  {
+    "selector": ".dsh-channels-stat [role=\"status\"]",
+    "ratio": 17.45095194843412
+  },
+  {
+    "selector": ".dsh-channels-thread .dsh-channels-send",
+    "ratio": 5.6423011095610764
+  }
+]

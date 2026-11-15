@@ -10,7 +10,15 @@ Working alpha for trusted DSH workspaces. Requires Node.js 24.9 or later and DSH
 
 [Install](#install) · [Use](#use) · [Trigger rules](#trigger-rules) · [Real screen flow](docs/flow.md) · [Verification evidence](docs/verification.md) · [FAQ](#faq)
 
-![DeepSeek Harness channel chat beside a real AI mission with native TODO progress](docs/media/03-real-mission-todo.png)
+![DSH Channels teammate thread with real TODO progress](docs/media/teammate-desktop.png)
+
+## Teammate threads
+
+The violet channel sidebar opens a Mission thread beside the team conversation. Each mission shows its real run status, native TODO progress, bound DSH Session, and an expandable assistant summary. The full request stays available without filling the task overview.
+
+Human replies appear alongside the native execution history with their actual authors. Ordinary replies stay silent. Only an explicit `@deepseek` starts or continues model work. The channel shows the mission's actual status and latest assistant summary, with a link back to that same thread.
+
+The native DSH renderer still owns assistant output, tool details, and TODOs. Desktop, phone navigation, and dark mode use the same live data. See the [design acceptance](design-qa.md) and [verification evidence](docs/verification.md).
 
 ## Why use DSH Channels
 
@@ -29,7 +37,7 @@ The tested DeepSeek Harness revision is `fcc0ad462172522aaf5c93a7b2e01f6b9f0b015
 git clone https://github.com/liush2yuxjtu/dsh-channels.git
 cd dsh-channels
 npm pack --ignore-scripts
-dsh plugin --profile web add "$PWD/dsh-channels-0.1.0.tgz"
+dsh plugin --profile web add "$PWD/dsh-channels-0.1.1.tgz"
 dsh web
 ```
 

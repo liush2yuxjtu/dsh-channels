@@ -1,6 +1,6 @@
 {
   "name": "dsh-channels",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared channels for DeepSeek Harness. Mention @deepseek to start a durable mission thread.",
   "type": "module",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "client": {
       "platform": "web",
       "immediately": true,
-      "inject": ["@deepseek-ai/dsh-client-connection", "@deepseek-ai/dsh-client-ui-layout", "@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-client-ui-renderer", "@deepseek-ai/dsh-api-session-controller", "@deepseek-ai/dsh-client-locale"]
+      "inject": ["@deepseek-ai/dsh-client-connection", "@deepseek-ai/dsh-client-ui-layout", "@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-chat", "@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-client-ui-renderer", "@deepseek-ai/dsh-api-session-controller", "@deepseek-ai/dsh-client-locale"]
     }
   },
   "scripts": {

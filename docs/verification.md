@@ -1,15 +1,24 @@
 # Verification
 
-Working alpha acceptance passed on 2026-11-10. The executable plugin sources match both the real API browser run and the two-process cold restart run.
+Working alpha 0.1.1 acceptance passed on 2026-11-15. The current executable sources match the teammate browser evidence and the two-process cold restart evidence below.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Domain behavior and real disk persistence | 16 tests PASS | `node --test tests/channels.test.mjs` |
-| Real Chromium and actual DeepSeek API | 19 checks PASS; 7 official responses | [live.json](evidence/live.json) |
-| Normal Host stop and cold restart | 13 checks PASS; two independent processes, two model turns | [cold-restart.json](evidence/cold-restart.json) |
-| Native TODO persistence | 2 actual tasks, 1 complete after restart | [cold-restart.json](evidence/cold-restart.json) |
-| Browser errors | None | [live.json](evidence/live.json) |
-| Independent review | Four release blockers fixed and rechecked; no remaining release blocker | [decisions.tsv](../decisions.tsv) |
+| Domain behavior, comment order and real disk persistence | 18 tests PASS | `node --test tests/channels.test.mjs` |
+| Real Chromium and actual DeepSeek API | 28 checks PASS; 6 official responses | [teammate live.json](evidence/teammate-20261115/live.json) |
+| Normal Host stop and cold restart | 13 checks PASS; two independent processes, two model turns | [teammate cold-restart.json](evidence/teammate-20261115/cold-restart.json) |
+| Native TODO persistence | 2 actual tasks, 1 complete after restart | [teammate cold-restart.json](evidence/teammate-20261115/cold-restart.json) |
+| Browser errors | None | [teammate live.json](evidence/teammate-20261115/live.json) |
+| Dark thread text contrast | All five checked text surfaces exceed 4.5:1 | [computed contrast](evidence/teammate-20261115/dark-thread-contrast.json) |
+| Independent review | Reported contrast, action placement and comment-order defects fixed; no remaining blocker in this change | [design acceptance](../design-qa.md) |
+
+The earlier [0.1.0 browser run](evidence/live.json) and [0.1.0 restart run](evidence/cold-restart.json) remain historical evidence. They are not counted as this version's acceptance. A separate development run encountered an official API HTTP 503; the strict provenance check refused that run. The successful run above is fresh and contains only complete HTTP 200 responses.
+
+## Teammate thread coverage
+
+Human comments appear while a real model turn is running, then stay with their corresponding native turn. Native prompt authors use the durable outbox request association. Unit checks cover equal timestamps, a queued followup without a native turn, and unloaded history. The browser checks that mention messages are not duplicated as human comments.
+
+Assistant actions remain attached to the assistant response before human comments. The browser clicks Copy and reads the real clipboard to verify the copied text. The channel receipt opens the original Mission. The overview shows Ready and actual TODO progress from 1/3 to 2/3; expanding the summary survives live updates. English, Chinese, phone layout and the dark thread are checked. No task completion or artifact count is fabricated.
 
 ## Browser coverage
 

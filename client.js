@@ -6,6 +6,7 @@ window.__ModuleLoader__.load({
     const { useEffect, useRef, useState, useSyncExternalStore } = React;
     const NS = 'dsh-channels';
     const en = {
+      taskSummary: 'Task summary', fullRequest: 'Full request', runStatus: 'Run status', boundSession: 'Bound to DSH Session', latestReply: 'Latest assistant summary', missionLink: 'Mission thread', teammate: 'DeepSeek is your teammate', todoProgress: 'TODO progress',
       channels: 'Channels', missions: 'Missions', native: 'Native DSH', restore: 'Open DSH Channels',
       nav: 'Open navigation', collapse: 'Collapse navigation', channel: 'Channel', thread: 'Mission thread',
       empty: 'Start a conversation', emptyHint: 'Chat with your team. Mention @deepseek when you want the agent to act.',
@@ -31,6 +32,7 @@ window.__ModuleLoader__.load({
       identityStorageFailed: 'Your browser could not save the sign-in recovery token. Free browser storage and try again. Your existing identity is kept.',
     };
     const zh = {
+      taskSummary: '任务摘要', fullRequest: '完整请求', runStatus: '执行状态', boundSession: '已关联 DSH Session', latestReply: '最新助手摘要', missionLink: '任务线程', teammate: 'DeepSeek 是你的协作同事', todoProgress: 'TODO 进度',
       channels: '频道', missions: '任务', native: '原生 DSH', restore: '打开 DSH Channels',
       nav: '打开导航', collapse: '收起导航', channel: '频道', thread: '任务线程',
       empty: '开始频道对话', emptyHint: '与团队正常聊天。需要 Agent 执行时，明确提及 @deepseek。',
@@ -59,7 +61,14 @@ window.__ModuleLoader__.load({
       .dsh-channels-nav,.dsh-channels-app,.dsh-channels-composer,.dsh-channels-restore{--ch-bg:var(--dsw-alias-bg-base,#fff);--ch-panel:var(--dsw-specific-sidebar-fill,#f7f8fa);--ch-text:var(--dsw-alias-label-primary,#20242c);--ch-muted:var(--dsw-alias-label-secondary,#727782);--ch-border:var(--dsw-alias-border-l2,#e4e7ec);--ch-accent:var(--dsw-alias-brand-primary,#4166d5);font-family:var(--dsw-font-family,Arial,sans-serif);font-size:14px;color:var(--ch-text);box-sizing:border-box}
       .dsh-channels-nav *,.dsh-channels-app *,.dsh-channels-composer *{box-sizing:border-box}.dsh-channels-nav button,.dsh-channels-app button,.dsh-channels-composer button,.dsh-channels-nav input,.dsh-channels-app input,.dsh-channels-composer textarea{font:inherit}.dsh-channels-nav button,.dsh-channels-app button,.dsh-channels-composer button{cursor:pointer}.dsh-channels-nav button:disabled,.dsh-channels-app button:disabled,.dsh-channels-composer button:disabled{opacity:.45;cursor:default}.dsh-channels-nav :focus-visible,.dsh-channels-app :focus-visible,.dsh-channels-composer :focus-visible{outline:2px solid var(--ch-accent);outline-offset:2px}
       .dsh-channels-nav{height:100%;min-height:0;display:flex;flex-direction:column;background:var(--ch-panel);overflow:hidden}.dsh-channels-nav-top{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:18px 18px 12px}.dsh-channels-brand{font-size:16px;font-weight:650;letter-spacing:-.35px}.dsh-channels-icon-button{border:0;background:transparent;color:var(--ch-muted);border-radius:7px;min-width:30px;min-height:30px;padding:5px;display:inline-flex;align-items:center;justify-content:center}.dsh-channels-icon-button:hover{background:color-mix(in srgb,var(--ch-text) 7%,transparent)}.dsh-channels-nav-scroll{min-height:0;overflow:auto;padding:8px 10px;flex:1}.dsh-channels-label{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:650;color:var(--ch-muted);padding:14px 10px 7px;text-transform:uppercase;letter-spacing:.06em}.dsh-channels-channel-button{display:flex;align-items:center;gap:9px;text-align:left;width:100%;padding:9px 12px;border:0;border-radius:7px;background:transparent;color:inherit;min-width:0}.dsh-channels-channel-button[aria-current=true]{background:color-mix(in srgb,var(--ch-accent) 10%,transparent);color:var(--ch-accent);font-weight:600}.dsh-channels-hash{font-size:18px;line-height:20px;color:var(--ch-muted)}.dsh-channels-mission{width:100%;border:0;background:transparent;color:inherit;border-radius:8px;padding:12px 11px;text-align:left;display:flex;flex-direction:column;gap:6px;min-width:0;margin:2px 0}.dsh-channels-mission:hover{background:color-mix(in srgb,var(--ch-text) 4%,transparent)}.dsh-channels-mission[aria-selected=true]{background:color-mix(in srgb,var(--ch-accent) 9%,transparent);box-shadow:inset 2px 0 var(--ch-accent)}.dsh-channels-mission-title{font-size:13px;line-height:19px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsh-channels-mission-summary{font-size:12px;line-height:18px;color:var(--ch-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}.dsh-channels-mission-meta{font-size:10px;color:var(--ch-muted);display:flex;align-items:center;gap:7px}.dsh-channels-dot{width:5px;height:5px;border-radius:50%;background:#a7acb6;flex:none}.dsh-channels-dot[data-status=running]{background:var(--ch-accent)}.dsh-channels-dot[data-status=failed]{background:#c65248}.dsh-channels-nav-empty{color:var(--ch-muted);font-size:12px;line-height:1.6;padding:14px 11px}.dsh-channels-footer{padding:12px 16px 18px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--ch-border)}.dsh-channels-footer small{color:var(--ch-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsh-channels-native{border:1px solid var(--ch-border);border-radius:7px;background:transparent;padding:7px 9px;color:var(--ch-muted);font-size:12px!important}.dsh-channels-nav-rail{align-items:center;padding:12px 4px;gap:16px}.dsh-channels-nav-rail .dsh-channels-brand{font-size:11px;writing-mode:vertical-rl}
-      .dsh-channels-app{height:100%;min-height:0;min-width:0;background:var(--ch-bg);display:flex;overflow:hidden}.dsh-channels-feed{display:flex;flex-direction:column;min-width:0;min-height:0;flex:1}.dsh-channels-app[data-thread=true] .dsh-channels-feed{max-width:470px;flex:0 0 39%;border-right:1px solid var(--ch-border)}.dsh-channels-header{min-height:76px;display:flex;align-items:center;gap:12px;padding:17px 25px;border-bottom:1px solid var(--ch-border);flex:none}.dsh-channels-heading{flex:1;min-width:0}.dsh-channels-heading h1,.dsh-channels-heading h2{font-size:17px;line-height:24px;font-weight:650;letter-spacing:-.3px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsh-channels-heading small{color:var(--ch-muted);font-size:11px;display:block;margin-top:3px}.dsh-channels-feed-scroll{flex:1;min-height:0;overflow:auto;padding:16px 26px;overscroll-behavior:contain}.dsh-channels-message{display:flex;gap:11px;padding:13px 0}.dsh-channels-avatar{width:29px;height:29px;flex:none;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--ch-accent) 9%,var(--ch-bg));color:var(--ch-accent);border-radius:9px;font-weight:650;font-size:12px}.dsh-channels-message-body{min-width:0;flex:1}.dsh-channels-message-meta{display:flex;align-items:baseline;gap:9px;font-size:12px}.dsh-channels-message-meta strong{font-weight:600}.dsh-channels-message-meta time{font-size:10px;color:var(--ch-muted)}.dsh-channels-message-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:13px;margin:5px 0 0}.dsh-channels-message-mission{margin-top:10px;border:1px solid var(--ch-border);border-radius:8px;background:transparent;color:var(--ch-accent);padding:8px 11px;font-size:12px!important;display:flex;gap:9px;align-items:center;max-width:100%;text-align:left}.dsh-channels-message-mission span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsh-channels-empty{display:flex;flex:1;min-height:180px;align-items:center;justify-content:center;text-align:center;padding:32px;color:var(--ch-muted);line-height:1.7}.dsh-channels-empty strong{display:block;color:var(--ch-text);font-size:19px;font-weight:600;letter-spacing:-.4px;margin-bottom:8px}.dsh-channels-empty p{max-width:340px;margin:0;font-size:13px}.dsh-channels-thread{display:flex;flex:1;flex-direction:column;min-width:0;min-height:0;overflow:hidden}.dsh-channels-thread .dsh-channels-header{padding-left:22px;padding-right:17px}.dsh-channels-session{display:flex;flex:1;min-height:0;min-width:0;position:relative}.dsh-channels-session>[data-conversation-content]{min-height:0;min-width:0;flex:1}.dsh-channels-notes{padding:10px 20px;border-bottom:1px solid var(--ch-border);max-height:130px;overflow:auto;font-size:12px;line-height:1.6}.dsh-channels-notes-title{color:var(--ch-muted);font-size:10px;font-weight:600}.dsh-channels-note{margin-top:5px;white-space:pre-wrap;overflow-wrap:anywhere}.dsh-channels-note strong{margin-right:8px}.dsh-channels-composer{margin:0;padding:14px 20px 18px;flex:none;min-width:0;background:var(--ch-bg)}.dsh-channels-composer-box{border:1px solid var(--ch-border);border-radius:12px;overflow:hidden;background:var(--ch-bg)}.dsh-channels-composer textarea{width:100%;min-height:68px;max-height:180px;resize:vertical;display:block;border:0;background:transparent;color:var(--ch-text);padding:12px 13px;font-size:13px;line-height:1.6}.dsh-channels-composer-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 10px 9px}.dsh-channels-composer-actions small{font-size:10px;color:var(--ch-muted)}.dsh-channels-send{border:0;border-radius:7px;background:var(--ch-accent);color:white;padding:7px 13px;font-size:12px!important;flex:none}.dsh-channels-error{color:#ba433a;background:color-mix(in srgb,#ba433a 5%,var(--ch-bg));font-size:12px;line-height:1.6;padding:9px 16px;overflow-wrap:anywhere;flex:none}.dsh-channels-error button{border:0;color:inherit;background:transparent;text-decoration:underline;padding-left:8px}.dsh-channels-back,.dsh-channels-mobile-nav{display:none}.dsh-channels-panel{padding:22px 25px;overflow:auto;border-bottom:1px solid var(--ch-border);max-height:65%;background:var(--ch-panel);flex:none}.dsh-channels-panel h2{font-size:16px;margin:0 0 14px}.dsh-channels-panel p{font-size:11px;color:var(--ch-muted);line-height:1.6;max-width:600px}.dsh-channels-panel form{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}.dsh-channels-panel input{border:1px solid var(--ch-border);border-radius:7px;padding:8px 10px;color:var(--ch-text);background:var(--ch-bg);min-width:100px;flex:1}.dsh-channels-panel button{border:1px solid var(--ch-border);border-radius:7px;padding:8px 11px;background:var(--ch-bg);color:var(--ch-text)}.dsh-channels-invitation{display:block;max-width:100%;font-family:monospace!important;font-size:11px!important}.dsh-channels-member-list{display:flex;gap:6px;flex-wrap:wrap;padding-top:8px}.dsh-channels-member-list span{border:1px solid var(--ch-border);border-radius:20px;padding:4px 9px;font-size:11px;color:var(--ch-muted)}.dsh-channels-restore{position:fixed;bottom:64px;left:12px;z-index:100;pointer-events:auto;background:var(--ch-bg);color:var(--ch-accent);border:1px solid var(--ch-border);border-radius:8px;padding:9px 12px;font-size:12px}
+      .dsh-channels-app{height:100%;min-height:0;min-width:0;background:var(--ch-bg);display:flex;overflow:hidden}.dsh-channels-feed{display:flex;flex-direction:column;min-width:0;min-height:0;flex:1}.dsh-channels-app[data-thread=true] .dsh-channels-feed{max-width:470px;flex:0 0 39%;border-right:1px solid var(--ch-border)}.dsh-channels-header{min-height:76px;display:flex;align-items:center;gap:12px;padding:17px 25px;border-bottom:1px solid var(--ch-border);flex:none}.dsh-channels-heading{flex:1;min-width:0}.dsh-channels-heading h1,.dsh-channels-heading h2{font-size:17px;line-height:24px;font-weight:650;letter-spacing:-.3px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsh-channels-heading small{color:var(--ch-muted);font-size:11px;display:block;margin-top:3px}.dsh-channels-feed-scroll{flex:1;min-height:0;overflow:auto;padding:16px 26px;overscroll-behavior:contain}.dsh-channels-message{display:flex;gap:11px;padding:13px 0}.dsh-channels-avatar{width:29px;height:29px;flex:none;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--ch-accent) 9%,var(--ch-bg));color:var(--ch-accent);border-radius:9px;font-weight:650;font-size:12px}.dsh-channels-message-body{min-width:0;flex:1}.dsh-channels-message-meta{display:flex;align-items:baseline;gap:9px;font-size:12px}.dsh-channels-message-meta strong{font-weight:600}.dsh-channels-message-meta time{font-size:10px;color:var(--ch-muted)}.dsh-channels-message-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:13px;margin:5px 0 0}.dsh-channels-message-mission{margin-top:10px;border:1px solid var(--ch-border);border-radius:8px;background:transparent;color:var(--ch-accent);padding:8px 11px;font-size:12px!important;display:flex;gap:9px;align-items:center;max-width:100%;text-align:left}.dsh-channels-message-mission span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsh-channels-empty{display:flex;flex:1;min-height:180px;align-items:center;justify-content:center;text-align:center;padding:32px;color:var(--ch-muted);line-height:1.7}.dsh-channels-empty strong{display:block;color:var(--ch-text);font-size:19px;font-weight:600;letter-spacing:-.4px;margin-bottom:8px}.dsh-channels-empty p{max-width:340px;margin:0;font-size:13px}.dsh-channels-thread{display:flex;flex:1;flex-direction:column;min-width:0;min-height:0;overflow:hidden}.dsh-channels-thread .dsh-channels-header{padding-left:22px;padding-right:17px}.dsh-channels-session{display:flex;flex:1;min-height:0;min-width:0;position:relative}.dsh-channels-session>[data-conversation-content]{min-height:0;min-width:0;flex:1}.dsh-channels-notes{padding:10px 20px;border-bottom:1px solid var(--ch-border);max-height:130px;overflow:auto;font-size:12px;line-height:1.6}.dsh-channels-notes-title{color:var(--ch-muted);font-size:10px;font-weight:600}.dsh-channels-note{margin-top:5px;white-space:pre-wrap;overflow-wrap:anywhere}.dsh-channels-note strong{margin-right:8px}.dsh-channels-composer{margin:0;padding:14px 20px 18px;flex:none;min-width:0;background:var(--ch-bg)}.dsh-channels-composer-box{border:1px solid var(--ch-border);border-radius:12px;overflow:hidden;background:var(--ch-bg)}.dsh-channels-composer textarea{width:100%;min-height:68px;max-height:180px;resize:vertical;display:block;border:0;background:transparent;color:var(--ch-text);padding:12px 13px;font-size:13px;line-height:1.6}.dsh-channels-composer-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 10px 9px}.dsh-channels-composer-actions small{font-size:10px;color:var(--ch-muted)}.dsh-channels-send{border:0;border-radius:7px;background:var(--ch-button-bg,var(--ch-accent));color:white;padding:7px 13px;font-size:12px!important;flex:none}.dsh-channels-error{color:#ba433a;background:color-mix(in srgb,#ba433a 5%,var(--ch-bg));font-size:12px;line-height:1.6;padding:9px 16px;overflow-wrap:anywhere;flex:none}.dsh-channels-error button{border:0;color:inherit;background:transparent;text-decoration:underline;padding-left:8px}.dsh-channels-back,.dsh-channels-mobile-nav{display:none}.dsh-channels-panel{padding:22px 25px;overflow:auto;border-bottom:1px solid var(--ch-border);max-height:65%;background:var(--ch-panel);flex:none}.dsh-channels-panel h2{font-size:16px;margin:0 0 14px}.dsh-channels-panel p{font-size:11px;color:var(--ch-muted);line-height:1.6;max-width:600px}.dsh-channels-panel form{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}.dsh-channels-panel input{border:1px solid var(--ch-border);border-radius:7px;padding:8px 10px;color:var(--ch-text);background:var(--ch-bg);min-width:100px;flex:1}.dsh-channels-panel button{border:1px solid var(--ch-border);border-radius:7px;padding:8px 11px;background:var(--ch-bg);color:var(--ch-text)}.dsh-channels-invitation{display:block;max-width:100%;font-family:monospace!important;font-size:11px!important}.dsh-channels-member-list{display:flex;gap:6px;flex-wrap:wrap;padding-top:8px}.dsh-channels-member-list span{border:1px solid var(--ch-border);border-radius:20px;padding:4px 9px;font-size:11px;color:var(--ch-muted)}.dsh-channels-restore{position:fixed;bottom:64px;left:12px;z-index:100;pointer-events:auto;background:var(--ch-bg);color:var(--ch-accent);border:1px solid var(--ch-border);border-radius:8px;padding:9px 12px;font-size:12px}
+      .dsh-channels-nav{--ch-panel:#20203e;--ch-text:#f4f2ff;--ch-muted:#c2bedc;--ch-border:#3a3858;--ch-accent:#c5baff;background:var(--ch-panel)}
+      .dsh-channels-nav-top{min-height:80px;border-bottom:1px solid var(--ch-border)}.dsh-channels-nav .dsh-channels-channel-button[aria-current=true]{background:#514983;color:#fff}.dsh-channels-nav .dsh-channels-mission[aria-selected=true]{background:#363153}.dsh-channels-nav .dsh-channels-mission-summary{color:#d1cce4}.dsh-channels-nav .dsh-channels-label{font-size:11px;letter-spacing:.04em}
+      .dsh-channels-app,.dsh-channels-composer{--ch-accent:#6551d8;--ch-button-bg:#6551d8}.dsh-channels-app[data-thread=true] .dsh-channels-feed{flex:0 0 48%;max-width:560px}.dsh-channels-header{min-height:86px}.dsh-channels-feed-scroll{padding-top:20px}.dsh-channels-avatar{border-radius:50%;width:34px;height:34px}.dsh-channels-message{padding:15px 0}.dsh-channels-message-meta{font-size:13px}.dsh-channels-message-text{font-size:14px;line-height:1.65}.dsh-channels-message-mission{background:color-mix(in srgb,var(--ch-accent) 6%,var(--ch-bg));border-color:color-mix(in srgb,var(--ch-accent) 20%,var(--ch-border))}.dsh-channels-message-mission[aria-expanded=true]{box-shadow:inset 3px 0 var(--ch-accent)}
+      .dsh-channels-thread{background:color-mix(in srgb,var(--ch-accent) 2%,var(--ch-bg))}.dsh-channels-thread-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.dsh-channels-thread-title h2{font-size:15px}.dsh-channels-session-badge{font-size:10px;line-height:1.5;color:var(--ch-accent);background:color-mix(in srgb,var(--ch-accent) 10%,var(--ch-bg));border-radius:12px;padding:3px 8px}.dsh-channels-overview{flex:none;padding:14px 18px;border-bottom:1px solid var(--ch-border);max-height:35%;overflow:auto}.dsh-channels-task-summary{border:1px solid var(--ch-border);background:var(--ch-bg);border-radius:10px;padding:12px 14px;margin-bottom:10px}.dsh-channels-task-summary strong{font-size:12px}.dsh-channels-task-summary p{font-size:13px;line-height:1.5;margin:5px 0 0;overflow-wrap:anywhere}.dsh-channels-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.dsh-channels-stat{border:1px solid var(--ch-border);background:var(--ch-bg);border-radius:9px;padding:10px 12px;font-size:11px;min-width:0}.dsh-channels-stat strong{display:block;font-size:13px;margin-top:5px}.dsh-channels-stat strong[data-status=running]{color:var(--ch-accent)}.dsh-channels-stat strong[data-status=failed]{color:var(--dsw-alias-state-error-primary,#ba433a)}.dsh-channels-stat progress{accent-color:#238451;width:100%;height:6px;display:block;margin-top:7px}.dsh-channels-latest{margin-top:10px;background:color-mix(in srgb,var(--ch-accent) 7%,var(--ch-bg));border:1px solid var(--ch-border);border-radius:9px;padding:9px 12px;font-size:12px}.dsh-channels-latest summary{cursor:pointer;font-weight:600;color:var(--ch-accent)}.dsh-channels-latest p{line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 0}
+      .dsh-channels-thread-replies{min-width:0;order:1}.dsh-channels-thread-reply{padding:12px 0}.dsh-channels-live-replies{flex:none;max-height:130px;overflow:auto;padding:0 20px;border-top:1px solid var(--ch-border)}.dsh-channels-thread-author{padding:5px 0 8px;color:var(--ch-text)}.dsh-channels-agent-reply{padding-left:12px;border-left:2px solid color-mix(in srgb,var(--ch-accent) 35%,var(--ch-bg));margin:0 0 12px}.dsh-channels-summary-label{display:block;font-size:10px;color:var(--ch-muted);margin-top:7px}.dsh-channels-task-preview{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.dsh-channels-request{margin-top:7px;font-size:11px}.dsh-channels-request summary{cursor:pointer;color:var(--ch-accent)}.dsh-channels-request p{max-height:140px;overflow:auto;white-space:pre-wrap}.dsh-channels-latest p{max-height:130px;overflow:auto}
+      body[data-ds-dark-theme] .dsh-channels-app,body[data-ds-dark-theme] .dsh-channels-composer{--ch-accent:#c5baff}
+      @media(max-width:760px){.dsh-channels-overview{padding:10px 12px;max-height:30%}.dsh-channels-session-badge{font-size:9px}.dsh-channels-task-summary{padding:9px 11px}.dsh-channels-message-text{font-size:13px}}
       @media(max-width:1100px){.dsh-channels-app[data-thread=true] .dsh-channels-feed{flex-basis:36%}.dsh-channels-header{padding:14px 17px}.dsh-channels-feed-scroll{padding:12px 18px}.dsh-channels-composer{padding:12px 14px 16px}}
       @media(max-width:760px){.dsh-channels-app[data-thread=true] .dsh-channels-feed{display:none}.dsh-channels-app[data-thread=false] .dsh-channels-thread{display:none}.dsh-channels-app .dsh-channels-feed{max-width:none!important;flex:1!important;border-right:0!important}.dsh-channels-back,.dsh-channels-mobile-nav{display:inline-flex}.dsh-channels-header{min-height:72px;padding:13px 12px;padding-left:max(12px,var(--dsh-frame-leading-clearance,0px))}.dsh-channels-thread .dsh-channels-header{padding-left:max(12px,var(--dsh-frame-leading-clearance,0px))}.dsh-channels-header .dsh-channels-heading h1,.dsh-channels-heading h2{font-size:16px}.dsh-channels-feed-scroll{padding:12px 16px}.dsh-channels-panel{padding:18px 15px;max-height:72%}.dsh-channels-composer-actions small{max-width:70%;font-size:9px}.dsh-channels-notes{padding:8px 13px;max-height:105px}}
     `;
@@ -91,6 +100,23 @@ window.__ModuleLoader__.load({
     const useStateStore = () => useSyncExternalStore(callback => { listeners.add(callback); return () => listeners.delete(callback); }, () => state);
     const timeOf = value => new Date(value).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
     const icon = name => h('svg', { width: 18, height: 18, 'aria-hidden': true }, h('use', { href: `#dsw-icon-${name}-regular` }));
+    const replyTurn = (message, chat, messages) => {
+      const positions = new Map(messages.flatMap((row, index) => row.agentRequestId ? [[row.agentRequestId, index]] : []));
+      const position = messages.findIndex(row => row.id === message.id);
+      let trigger;
+      let triggerPosition = -1;
+      for (let index = 0; index < position; index++) {
+        if (messages[index].agentRequestId) { trigger = messages[index].agentRequestId; triggerPosition = index; }
+      }
+      let laterTurnLoaded = false;
+      for (const node of chat.nodes.values()) {
+        if (node.location.kind !== 'turn' && node.location.kind !== 'step') continue;
+        const requestId = node.data?.source?.rpcId;
+        if (requestId === trigger) return node.location.turn.end ? node.location.turn.turn : null;
+        if (positions.get(requestId) > triggerPosition) laterTurnLoaded = true;
+      }
+      return laterTurnLoaded ? undefined : null;
+    };
 
     return {
       inject: ['connection', 'slots', 'sessions', 'uiWorkspace', 'locale', 'layout'],
@@ -208,6 +234,46 @@ window.__ModuleLoader__.load({
                   disabled: !draft.trim() || sending || !value.channelId }, t(sending ? 'sending' : 'send')))),
             threadId && value.error && h('div', { className: 'dsh-channels-error', role: 'alert' }, value.error));
         }
+        function ThreadReplies({ messages, value, turn = null }) {
+          return messages.map(message => {
+            const name = value.members.find(member => member.id === message.authorId)?.name || message.authorId;
+            return h('article', { className: 'dsh-channels-message dsh-channels-thread-reply', key: message.id, 'data-testid': 'thread-message',
+              'data-message-id': message.id, 'data-reply-turn': turn === null ? 'pending' : turn },
+              h('span', { className: 'dsh-channels-avatar', 'aria-hidden': true }, Array.from(name)[0]),
+              h('div', { className: 'dsh-channels-message-body' }, h('div', { className: 'dsh-channels-message-meta' }, h('strong', null, name),
+                h('time', { dateTime: new Date(message.createdAt).toISOString() }, timeOf(message.createdAt))),
+              h('p', { className: 'dsh-channels-message-text' }, message.text)));
+          });
+        }
+        function ThreadTail({ sessionId, turn, useChat }) {
+          const value = useStateStore();
+          const chat = useChat(snapshot => snapshot);
+          const mission = value.missions.find(row => row.id === value.missionId && row.sessionId === sessionId);
+          const history = mission ? value.messages.filter(message => message.threadId === mission.id || message.id === mission.rootMessageId) : [];
+          const messages = history.filter(message => message.threadId === mission.id && message.agentRequestId === null
+            && replyTurn(message, chat, history) === turn.turn);
+          return messages.length ? h('div', { className: 'dsh-channels-thread-replies' }, h(ThreadReplies, { messages, value, turn: turn.turn })) : null;
+        }
+        function ThreadAuthor({ sessionId, matched }) {
+          const value = useStateStore();
+          const mission = value.missions.find(row => row.id === value.missionId && row.sessionId === sessionId);
+          const message = mission && value.messages.find(row => row.agentRequestId === matched
+            && (row.threadId === mission.id || row.id === mission.rootMessageId));
+          if (!message) return null;
+          const name = value.members.find(member => member.id === message.authorId)?.name || message.authorId;
+          return h('div', { className: 'dsh-channels-message-meta dsh-channels-thread-author', 'data-testid': 'thread-author', 'data-message-id': message.id },
+            h('strong', null, name), h('time', { dateTime: new Date(message.createdAt).toISOString() }, timeOf(message.createdAt)));
+        }
+        function ThreadPendingReplies({ sessionId, t, useChat }) {
+          const value = useStateStore();
+          const chat = useChat(snapshot => snapshot);
+          const mission = value.missions.find(row => row.id === value.missionId && row.sessionId === sessionId);
+          if (!mission) return null;
+          const history = value.messages.filter(message => message.threadId === mission.id || message.id === mission.rootMessageId);
+          const messages = history.filter(message => message.threadId === mission.id && message.agentRequestId === null
+            && replyTurn(message, chat, history) === null);
+          return messages.length ? h('div', { className: 'dsh-channels-live-replies', role: 'log', 'aria-label': t('threadNotes') }, h(ThreadReplies, { messages, value })) : null;
+        }
         function ThreadComposer({ sessionId, t }) {
           const value = useStateStore();
           const mission = value.missions.find(row => row.id === value.missionId && row.sessionId === sessionId);
@@ -223,6 +289,18 @@ window.__ModuleLoader__.load({
             h('span', { className: 'dsh-channels-mission-summary' }, mission.summary || t('noSummary')),
             h('span', { className: 'dsh-channels-mission-meta' }, h('span', { className: 'dsh-channels-dot', 'data-status': mission.status }),
               h('span', null, t(mission.status)), h('span', null, todos.length ? t('tasks', { done: completed, total: todos.length }) : t('noTasks'))));
+        }
+        function MissionOverview({ mission, request, t }) {
+          const todos = mission.todos || [];
+          const completed = todos.filter(task => task.status === 'completed').length;
+          return h('section', { className: 'dsh-channels-overview', 'aria-label': t('taskSummary'), 'data-testid': 'mission-overview' },
+            h('div', { className: 'dsh-channels-task-summary' }, h('strong', null, t('taskSummary')), h('p', { className: 'dsh-channels-task-preview' }, mission.title),
+              request && h('details', { className: 'dsh-channels-request' }, h('summary', null, t('fullRequest')), h('p', null, request.text))),
+            h('div', { className: 'dsh-channels-stats' },
+              h('div', { className: 'dsh-channels-stat' }, t('runStatus'), h('strong', { role: 'status', 'data-status': mission.status }, t(mission.status))),
+              h('div', { className: 'dsh-channels-stat' }, t('todoProgress'), h('strong', null, todos.length ? `${completed}/${todos.length}` : t('noTasks')),
+                todos.length > 0 && h('progress', { max: todos.length, value: completed, 'aria-label': t('tasks', { done: completed, total: todos.length }) }))),
+            mission.summary && h('details', { className: 'dsh-channels-latest' }, h('summary', null, t('latestReply')), h('p', null, mission.summary)));
         }
         function Sidebar({ collapsed, drawer, t }) {
           const value = useStateStore();
@@ -283,7 +361,6 @@ window.__ModuleLoader__.load({
           const mission = value.missions.find(row => row.id === value.missionId);
           const members = new Map(value.members.map(member => [member.id, member]));
           const rootMessages = value.messages.filter(message => message.channelId === value.channelId && !message.threadId);
-          const threadMessages = value.messages.filter(message => message.threadId === mission?.id);
           const endRef = useRef(null);
           useEffect(() => { endRef.current?.scrollIntoView({ block: 'end' }); }, [rootMessages.length, value.channelId]);
           const author = message => members.get(message.authorId)?.name || t('memberName');
@@ -292,7 +369,7 @@ window.__ModuleLoader__.load({
             h('section', { className: 'dsh-channels-feed', 'aria-label': t('channel') },
               h('header', { className: 'dsh-channels-header' },
                 h('button', { className: 'dsh-channels-icon-button dsh-channels-mobile-nav', onClick: () => ctx.layout.toggleSidebar(), 'aria-label': t('nav') }, icon('panel-left-outline')),
-                h('div', { className: 'dsh-channels-heading' }, h('h1', null, channel ? '# ' + channel.name : t('selected')), h('small', null, t('mentionHint'))),
+                h('div', { className: 'dsh-channels-heading' }, h('h1', null, channel ? '# ' + channel.name : t('selected')), h('small', null, t('teammate'), ' · ', t('mentionHint'))),
                 h('button', { className: 'dsh-channels-icon-button', onClick: () => update({ panel: !value.panel }), 'aria-label': t('manage') }, icon('user-outline'))),
               value.panel && h(Management, { t }),
               value.error && h('div', { className: 'dsh-channels-error', role: 'alert' }, value.error,
@@ -301,23 +378,29 @@ window.__ModuleLoader__.load({
                 rootMessages.length ? rootMessages.map(message => {
                   const linked = value.missions.find(row => row.rootMessageId === message.id);
                   const name = author(message);
-                  return h('article', { key: message.id, className: 'dsh-channels-message', 'data-testid': 'channel-message', 'data-message-id': message.id },
+                  return h(React.Fragment, { key: message.id }, h('article', { className: 'dsh-channels-message', 'data-testid': 'channel-message', 'data-message-id': message.id },
                     h('span', { className: 'dsh-channels-avatar', 'aria-hidden': true }, Array.from(name)[0]),
                     h('div', { className: 'dsh-channels-message-body' }, h('div', { className: 'dsh-channels-message-meta' }, h('strong', null, name),
                       h('time', { dateTime: new Date(message.createdAt).toISOString() }, timeOf(message.createdAt))),
                     h('p', { className: 'dsh-channels-message-text' }, message.text),
-                    linked && h('button', { className: 'dsh-channels-message-mission', onClick: () => selectMission(linked) }, icon('layers-outline'), h('span', null, linked.title), h('small', null, t(linked.status)))));
+                    linked && h('button', { className: 'dsh-channels-message-mission', 'aria-expanded': value.missionId === linked.id, onClick: () => selectMission(linked) }, icon('layers-outline'), h('span', null, t('missionLink'), ': ', linked.title), h('small', null, t(linked.status))))),
+                    linked && h('article', { className: 'dsh-channels-message dsh-channels-agent-reply', 'data-testid': 'channel-agent-reply', 'data-mission-id': linked.id },
+                      h('span', { className: 'dsh-channels-avatar', 'aria-hidden': true }, icon('layers-outline')),
+                      h('div', { className: 'dsh-channels-message-body' },
+                        h('div', { className: 'dsh-channels-message-meta' }, h('strong', null, 'DeepSeek'), h('small', null, 'APP'), h('span', { 'data-status': linked.status }, t(linked.status))),
+                        linked.summary && h(React.Fragment, null, h('small', { className: 'dsh-channels-summary-label' }, t('latestReply')), h('p', { className: 'dsh-channels-message-text' }, linked.summary)),
+                        h('button', { className: 'dsh-channels-message-mission', onClick: () => selectMission(linked), 'aria-expanded': value.missionId === linked.id },
+                          icon('layers-outline'), h('span', null, t('missionLink'), ': ', linked.title)))));
                 }) : h('div', { className: 'dsh-channels-empty' }, h('div', null, h('strong', null, t(value.phase === 'loading' ? 'loading' : 'empty')), h('p', null, t('emptyHint')))),
                 h('div', { ref: endRef })),
               h(Composer, { t })),
             mission && h('section', { className: 'dsh-channels-thread', 'aria-label': t('thread') },
               h('header', { className: 'dsh-channels-header' },
                 h('button', { className: 'dsh-channels-icon-button dsh-channels-back', onClick: closeMission, 'aria-label': t('back') }, icon('chevron-left-outline')),
-                h('div', { className: 'dsh-channels-heading' }, h('h2', null, mission.title), h('small', null, t(mission.status), ' · ', t('thread'))),
+                h('div', { className: 'dsh-channels-heading' }, h('div', { className: 'dsh-channels-thread-title' }, h('h2', null, t('thread')), mission.sessionId && h('span', { className: 'dsh-channels-session-badge' }, t('boundSession'))), h('small', { title: mission.title }, mission.title)),
                 mission.status === 'failed' && h('button', { className: 'dsh-channels-native', onClick: retryMission }, t('retry')),
                 h('button', { className: 'dsh-channels-icon-button', onClick: closeMission, 'aria-label': t('close') }, '×')),
-              threadMessages.length > 0 && h('div', { className: 'dsh-channels-notes' }, h('div', { className: 'dsh-channels-notes-title' }, t('threadNotes')),
-                threadMessages.map(message => h('div', { className: 'dsh-channels-note', key: message.id, 'data-testid': 'thread-message' }, h('strong', null, author(message)), message.text))),
+              h(MissionOverview, { mission, request: rootMessages.find(message => message.id === mission.rootMessageId), t }),
               mission.sessionId && sessionId === mission.sessionId ? h('div', { className: 'dsh-channels-session' }, renderFactorySlot('conversation.content', { variant: 'embedded', phase: 'active', hero: false }))
                 : h('div', { className: 'dsh-channels-empty' }, h('p', { role: 'status' }, t('waiting')))));
         }
@@ -326,6 +409,10 @@ window.__ModuleLoader__.load({
             ctx.slots.inject('sidebar', () => ctx.slots.register({ name: 'sidebar', priority: -10, locale: NS }, Sidebar)),
             ctx.slots.inject('main.conversation', () => ctx.slots.register({ name: 'main.conversation', priority: -10, locale: NS }, Channels)),
             ctx.slots.inject('conversation.composer.bar', () => ctx.slots.register({ name: 'conversation.composer.bar', priority: -10, locale: NS }, ThreadComposer)),
+            ctx.slots.inject('conversation.input.dock', () => ctx.slots.register({ name: 'conversation.input.dock', id: 'dsh-channels-live-replies', order: 10, locale: NS }, ThreadPendingReplies)),
+            ctx.slots.inject('conversation.chat.turnTail', () => ctx.slots.register({ name: 'conversation.chat.turnTail', id: 'dsh-channels-replies', order: 10 }, ThreadTail)),
+            ctx.slots.inject('conversation.chat.user.before', () => ctx.slots.register({ name: 'conversation.chat.user.before', priority: -10,
+              select: ({ source }) => typeof source?.rpcId === 'string' && state.messages.some(message => message.agentRequestId === source.rpcId) ? source.rpcId : null }, ThreadAuthor)),
           ];
         }
         function toggleMode() {

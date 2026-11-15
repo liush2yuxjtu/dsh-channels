@@ -10,6 +10,16 @@ DSH Channels 是开源的 **DeepSeek Harness（DSH）插件**，提供团队频�
 
 [安装](#安装) · [使用](#使用) · [常见问题](#常见问题) · [完整实机流程，英文界面](docs/flow.md) · [验收证据](docs/verification.md)
 
+![DSH Channels 同事协作线程与真实 TODO 进度](docs/media/teammate-desktop.png)
+
+## 同事协作线程
+
+紫色导航保留频道与任务列表。Mission Thread 显示真实执行状态、原生 TODO 进度、DSH Session 关联和可展开的助手摘要。完整请求可以展开查看，默认任务概览保持紧凑。
+
+人类回复带真实作者，放在对应的原生执行记录旁。普通回复不调用模型。只有明确提及 `@deepseek` 才开始或继续执行。频道显示任务的实际状态与最新助手摘要，点击回执可返回同一线程。
+
+Assistant 消息、工具细节与 TODO 继续使用原生 DSH 渲染。桌面、手机导航与暗色模式使用同一份真实数据。参见[设计验收](design-qa.md)与[验收证据](docs/verification.md)。
+
 ## 适用场景
 
 - 将团队决策保存在频道里，普通消息不调用 Agent。
@@ -27,7 +37,7 @@ DSH Channels 是开源的 **DeepSeek Harness（DSH）插件**，提供团队频�
 git clone https://github.com/liush2yuxjtu/dsh-channels.git
 cd dsh-channels
 npm pack --ignore-scripts
-dsh plugin --profile web add "$PWD/dsh-channels-0.1.0.tgz"
+dsh plugin --profile web add "$PWD/dsh-channels-0.1.1.tgz"
 dsh web
 ```
 

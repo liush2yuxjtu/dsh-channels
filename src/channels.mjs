@@ -235,9 +235,11 @@ export class Channels {
     const channels = state.channels.filter(value => value.memberIds.includes(member.id) && (channelId === undefined || value.id === channelId));
     const ids = new Set(channels.map(value => value.id));
     const members = new Set([member.id, ...channels.flatMap(value => value.memberIds)]);
+    const deliveries = new Map(state.outbox.map(value => [value.messageId, value.requestId]));
     return clone({ identity: publicMember(member), channels,
       members: state.members.filter(value => members.has(value.id)).map(publicMember),
-      messages: state.messages.filter(value => ids.has(value.channelId)), missions: state.missions.filter(value => ids.has(value.channelId)).map(publicMission) });
+      messages: state.messages.filter(value => ids.has(value.channelId)).map(value => ({ ...value, agentRequestId: deliveries.get(value.id) ?? null })),
+      missions: state.missions.filter(value => ids.has(value.channelId)).map(publicMission) });
   }
 
   post(token, { channelId, threadId = null, text, requestId }) {
